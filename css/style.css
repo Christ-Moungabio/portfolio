@@ -1,0 +1,43 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    transition: color 0.3s ease;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #14b8a6; /* Teal */
+}
+
+nav ul {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 1rem;
+    margin: 0;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+
+nav ul li {
+    flex: 0 0 auto;
+    list-style: none;
+}
+
+nav ul::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        justify-content: flex-start;
+    }
+
+    nav ul li {
+        min-width: auto;
+        text-align: center;
+    }
+}
