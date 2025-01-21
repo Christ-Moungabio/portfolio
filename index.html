@@ -8,7 +8,33 @@
     <title>Portfolio - Christ-Henoc Moungabio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .nav-scroll a {
+            color: #cbd5e0;
+            transition: color 0.3s;
+        }
+
+        .nav-scroll a:hover {
+            color: #38b2ac;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-gray-900 text-white font-poppins">
@@ -20,27 +46,25 @@
                 <div>
                     <h1 class="text-2xl font-bold">Christ-Henoc Moungabio</h1>
                     <p class="text-sm text-gray-400">Développeur Web | Spécialiste en Réseaux Informatiques</p>
-                </div>
+                </div><br>
             </div>
-            <nav class="mt-4 lg:mt-0">
-                <ul class="nav-scroll">
-                    <li><a href="#about">À propos</a></li>
-                    <li><a href="#projects">Projets</a></li>
-                    <li><a href="#skills">Compétences</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                     
+            <nav class="mt-4 lg:mt-0 overflow-x-auto">
+                <ul class="flex space-x-6 nav-scroll flex-nowrap w-full">
+                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#about">À propos</a></li>
+                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#projects">Projets</a></li>
+                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#skills">Compétences</a></li>
+                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            
         </div>
     </header>
 
     <main class="container mx-auto px-6">
         <!-- Section À propos -->
-        <section id="about" class="py-16">
+        <section id="about" class="py-16 fade-in">
             <h2 class="text-3xl font-semibold text-teal-400 mb-4">À propos</h2>
-            <p class="text-gray-300">Je suis un développeur web passionné avec une expertise en création de sites
-                dynamiques, conception de bases de données, et solutions réseaux. Mon objectif est de fournir des
-                expériences numériques innovantes et efficaces.</p>
+            <p class="text-gray-300">Je suis un développeur web passionné avec une expertise en création de sites dynamiques, conception de bases de données et solutions réseaux. Mon objectif est de fournir des expériences numériques innovantes et efficaces.</p>
         </section>
 
         <!-- Section Projets -->
@@ -51,10 +75,9 @@
                 <div
                     class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
                     <img src="assets/Maknet.jpg" alt="Maknet Entreprise" class="rounded-full w-16 h-16 mb-4">
-                    <h3 class="text-xl font-semibold text-white mb-2">Maknet-Entreprise</h3>
-                    <p class="text-gray-400 mb-3">En cours de développement : Une plateforme de services et formations
-                        en technologie, photo studio, et beauté.</p>
-                    <a href="https://maknet-entreprise.com/"
+                    <h3 class="text-xl font-semibold text-white mb-2">Maknet-fashion-week</h3>
+                    <p class="text-gray-400 mb-3">En cours de développement : Une plateforme de Pré - inscription .</p>
+                    <a href="https://maknet-fashion-week.com/"
                         class="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition-all">Aperçu</a>
                 </div>
                 <!-- Projet 2 -->
@@ -104,38 +127,35 @@
         </section>
 
         <!-- Section Compétences -->
-        <section id="skills" class="py-16">
+        <section id="skills" class="py-16 fade-in">
             <h2 class="text-3xl font-semibold text-teal-400 mb-4">Compétences</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
                 <div class="bg-gray-700 p-4 rounded-lg">HTML, CSS, JavaScript</div>
                 <div class="bg-gray-700 p-4 rounded-lg">PHP & Symfony</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Bootstrap</div>
+                <div class="bg-gray-700 p-4 rounded-lg">Bootstrap & Tailwind</div>
                 <div class="bg-gray-700 p-4 rounded-lg">WordPress</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Cybersécurité</div>
                 <div class="bg-gray-700 p-4 rounded-lg">Réseaux informatiques</div>
+                <div class="bg-gray-700 p-4 rounded-lg">Bases de données MySQL</div>
+                <div class="bg-gray-700 p-4 rounded-lg">Docker</div>
+                <div class="bg-gray-700 p-4 rounded-lg">Git & GitHub</div>
             </div>
         </section>
 
+      
         <!-- Section Contact -->
-        <section id="contact" class="py-16 bg-gray-800 rounded-lg">
+        <section id="contact" class="py-16 bg-gray-800 rounded-lg fade-in">
             <h2 class="text-3xl font-semibold text-teal-400 mb-4">Contact</h2>
-            <p class="text-gray-300 mb-6">N'hésitez pas à me contacter pour toute collaboration ou question. Je réponds
-                rapidement !</p>
-            <form action="https://formspree.io/f/mg.christ.henoc@gmail.com" method="POST"
-                class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" name="name" placeholder="Votre nom"
-                    class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                    required>
-                <input type="email" name="email" placeholder="Votre email"
-                    class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                    required>
-
-                <textarea name="message" placeholder="Votre message"
-                    class="p-3 rounded-lg bg-gray-900 text-gray-300 md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required></textarea>
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg md:col-span-2 transition-all">Envoyer</button>
+            <p class="text-gray-300 mb-6">N'hésitez pas à me contacter pour toute collaboration ou question.</p>
+            <form action="https://formsubmit.co/mg.christ.henoc@gmail.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Email Configuration -->
+                <input type="hidden" name="_subject" value="Message depuis votre portfolio">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Votre nom" class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
+                <input type="email" name="email" placeholder="Votre email" class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
+                <textarea name="message" placeholder="Votre message" class="p-3 rounded-lg bg-gray-900 text-gray-300 md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg md:col-span-2 transition-all">Envoyer</button>
             </form>
+        </section>
     </main>
 
     <footer class="py-6 bg-gray-900 text-center">
