@@ -1,1 +1,1 @@
-"# portfolio"  
+Bienvenue sur mon portfolio en ligne où je présente une sélection de mes projets réalisés en tant que développeur web, mettant en avant mes compétences techniques en développement front-end et back-end, ainsi que ma passion pour la création d'applications interactives et la conception d'expériences utilisateurs innovantes.
