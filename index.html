@@ -2,165 +2,412 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Christ-Henoc Moungabio, développeur web et spécialiste en réseaux informatiques.">
-    <title>Portfolio - Christ-Henoc Moungabio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de Christ-Henoc Moungabio — Développeur back-end (PHP/Laravel) avec bases front-end, automatisation n8n, intégration API et administration systèmes & réseaux.">
+  <title>Portfolio – Christ‑Henoc Moungabio</title>
 
-        .nav-scroll a {
-            color: #cbd5e0;
-            transition: color 0.3s;
-        }
-
-        .nav-scroll a:hover {
-            color: #38b2ac;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#e6fffb', 100: '#b3fff2', 200: '#80ffe8', 300: '#4dffdf', 400: '#1affd5',
+              500: '#00e6bc', 600: '#00b396', 700: '#008071', 800: '#004e4b', 900: '#002b29'
             }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.25)'
+          }
         }
-    </style>
+      }
+    }
+  </script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio – Christ‑Henoc Moungabio" />
+  <meta property="og:description" content="Développeur back-end PHP/Laravel • Automatisation n8n • Intégration d'API • Réseaux." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/cover.jpg" />
+  <meta name="theme-color" content="#00e6bc" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
 
-<body class="bg-gray-900 text-white font-poppins">
-    <!-- Header -->
-    <header class="bg-gray-800">
-        <div class="container mx-auto p-6 flex flex-col lg:flex-row items-center justify-between">
-            <div class="flex items-center gap-4">
-                <img src="assets/profil.jpg" alt="Photo de Christ-Henoc Moungabio" class="rounded-full w-16 h-16">
-                <div>
-                    <h1 class="text-2xl font-bold">Christ-Henoc Moungabio</h1>
-                    <p class="text-sm text-gray-400">Développeur Web | Spécialiste en Réseaux Informatiques</p>
-                </div><br>
-            </div>
-            <nav class="mt-4 lg:mt-0 overflow-x-auto">
-                <ul class="flex space-x-6 nav-scroll flex-nowrap w-full">
-                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#about">À propos</a></li>
-                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#projects">Projets</a></li>
-                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#skills">Compétences</a></li>
-                    <li class="flex-shrink-0 w-1/3 text-center"><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            
+<body class="bg-gray-950 text-gray-100 font-poppins">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-gray-950/70 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3 group">
+          <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" class="w-10 h-10 rounded-full ring-2 ring-brand-500/40" loading="lazy">
+          <span class="font-semibold tracking-wide group-hover:text-brand-400">Christ‑Henoc Moungabio</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#about" class="hover:text-brand-400">À propos</a>
+          <a href="#timeline" class="hover:text-brand-400">Parcours</a>
+          <a href="#projects" class="hover:text-brand-400">Projets</a>
+          <a href="#skills" class="hover:text-brand-400">Compétences</a>
+          <a href="#contact" class="hover:text-brand-400">Contact</a>
+          <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30">Télécharger CV</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+      <div class="px-4 py-4 space-y-3 text-sm">
+        <a href="#about" class="block hover:text-brand-400">À propos</a>
+        <a href="#timeline" class="block hover:text-brand-400">Parcours</a>
+        <a href="#projects" class="block hover:text-brand-400">Projets</a>
+        <a href="#skills" class="block hover:text-brand-400">Compétences</a>
+        <a href="#contact" class="block hover:text-brand-400">Contact</a>
+        <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="inline-block px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30">Télécharger CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+            Développeur Back‑End <span class="text-brand-400">PHP/Laravel</span> & Automatisation
+          </h1>
+          <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl">
+            Je conçois des applications web robustes, j'intègre des API et j'automatise des workflows avec <strong>n8n</strong> pour gagner du temps et réduire les erreurs. Basé à Brazzaville, ouvert aux missions <strong>freelance</strong> à distance.
+          </p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#projects" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition">Voir mes projets</a>
+            <a href="#contact" class="px-5 py-3 rounded-xl border border-white/10 hover:border-brand-400/60">Me contacter</a>
+          </div>
+          <ul class="mt-6 flex flex-wrap gap-3 text-xs text-gray-300">
+            <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Laravel</li>
+            <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Symfony</li>
+            <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">MySQL & PostgreSQL</li>
+            <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">n8n & Intégrations API</li>
+            <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Bootstrap & Tailwind</li>
+          </ul>
         </div>
-    </header>
-
-    <main class="container mx-auto px-6">
-        <!-- Section À propos -->
-        <section id="about" class="py-16 fade-in">
-            <h2 class="text-3xl font-semibold text-teal-400 mb-4">À propos</h2>
-            <p class="text-gray-300">Je suis un développeur web passionné avec une expertise en création de sites dynamiques, conception de bases de données et solutions réseaux. Mon objectif est de fournir des expériences numériques innovantes et efficaces.</p>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projects" class="py-16 bg-gray-800 rounded-lg">
-            <h2 class="text-3xl font-semibold text-teal-400 mb-4">Projets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Projet 1 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/Maknet.jpg" alt="Maknet Entreprise" class="rounded-full w-16 h-16 mb-4">
-                    <h3 class="text-xl font-semibold text-white mb-2">Maknet-fashion-week</h3>
-                    <p class="text-gray-400 mb-3">En cours de développement : Une plateforme de Pré - inscription .</p>
-                    <a href="https://maknet-fashion-week.com/"
-                        class="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition-all">Aperçu</a>
-                </div>
-                <!-- Projet 2 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/logo.ico" alt="CashCraft Entreprise" class="rounded-full w-16 h-16">
-                    <h3 class="text-xl font-semibold text-white mb-2">Cashcraft-Entreprise</h3>
-                    <p class="text-gray-400 mb-3">Plateforme d'achat et de formation en e-commerce
-                        et opportunités d'affaires.</p>
-                    <a href="https://cashcraft-entreprise.com" target="_blank"
-                        class="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition-all">Visitez le
-                        site</a>
-                </div>
-                <!-- Projet 3 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/Escat.jpg" alt="ESCAT" class="rounded-full w-16 h-16">
-                    <h3 class="text-xl font-semibold text-white mb-2">WordPress - ESCAT</h3>
-                    <p class="text-gray-400 mb-3">Site web pour une école de commerce et de technologies. Développement
-                        complet et personnalisé sous WordPress.</p>
-                    <a href="https://sites.google.com/d/110vL2m4mlYRX-9fJyFbw8MGM8kApNFzB/p/1dgsxPwKhVZNeOK1-9eMc0sPFSw7yBkin/edit"
-                        class="bg-teal-500 text-white py-2 px-4 rounded-lg hover:bg-teal-600 transition-all">Aperçu</a>
-                </div>
-                <!-- Projet 4 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/iptv.jpg" alt="Maknet IPTV" class="rounded-full w-16 h-16">
-                    <h3 class="text-xl font-semibold text-white mb-2">Maknet IPTV</h3>
-                    <p class="text-gray-400 mb-3">Service IPTV innovant pour la diffusion de contenu multimédia.</p>
-                </div>
-                <!-- Projet 5 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/database.jpg" alt="Développement Base de Données" class="rounded-full w-16 h-16">
-                    <h3 class="text-xl font-semibold text-white mb-2">Développement Base de Données</h3>
-                    <p class="text-gray-400 mb-3">Conception et optimisation de bases de données.</p>
-                </div>
-                <!-- Projet 6 -->
-                <div
-                    class="bg-gray-700 p-4 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                    <img src="assets/network.jpg" alt="Configuration Réseau" class="w-full rounded-lg mb-4">
-                    <h3 class="text-xl font-semibold text-white mb-2">Configuration Réseau</h3>
-                    <p class="text-gray-400 mb-3">Solutions de réseau pour entreprises et infrastructures complexes pour
-                        sigma.</p>
-                </div>
+      <!--   <div class="reveal md:justify-self-end">
+          <div class="relative w-full max-w-md mx-auto">
+            <img src="assets/hero-shot.png" alt="Illustration de développement web" class="w-full rounded-2xl shadow-soft ring-1 ring-white/10" loading="lazy" />
+            <div class="absolute -bottom-5 -left-5 bg-brand-500/20 text-brand-200 px-4 py-2 rounded-xl text-xs border border-brand-500/30 backdrop-blur">
+              +5 projets livrés • 100% freelance
             </div>
-        </section>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
 
-        <!-- Section Compétences -->
-        <section id="skills" class="py-16 fade-in">
-            <h2 class="text-3xl font-semibold text-teal-400 mb-4">Compétences</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-                <div class="bg-gray-700 p-4 rounded-lg">HTML, CSS, JavaScript</div>
-                <div class="bg-gray-700 p-4 rounded-lg">PHP & Symfony</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Bootstrap & Tailwind</div>
-                <div class="bg-gray-700 p-4 rounded-lg">WordPress</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Réseaux informatiques</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Bases de données MySQL</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Docker</div>
-                <div class="bg-gray-700 p-4 rounded-lg">Git & GitHub</div>
+  <!-- ABOUT -->
+  <section id="about" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-10 items-start">
+        <div class="md:col-span-2 reveal">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-300">À propos</h2>
+          <p class="mt-4 text-gray-300 leading-relaxed">
+            Titulaire d’une licence en <strong>Génie Informatique & Réseaux</strong> (ESCAT, 2025), j’interviens surtout en back‑end
+            (<strong>PHP/Laravel</strong>) avec de solides bases front‑end (HTML, CSS, Bootstrap, JS) et une pratique de
+            l’<strong>automatisation</strong> avec <strong>n8n</strong>. Mon approche : livrer des solutions fiables, évolutives et bien documentées.
+          </p>
+        </div>
+        <aside class="reveal">
+          <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+            <h3 class="font-semibold mb-3">Infos rapides</h3>
+            <ul class="text-sm text-gray-300 space-y-2">
+              <li>Brazzaville, Congo</li>
+              <li>mg.christ.henoc@gmail.com</li>
+              <li>+242 06 968 84 32</li>
+                   🔗   <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn">LinkedIn</a>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE / PARCOURS -->
+  <section id="timeline" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10">Parcours</h2>
+      <div class="relative pl-6 md:pl-10">
+        <span class="absolute left-2 md:left-4 top-0 h-full w-px bg-gradient-to-b from-brand-500/60 to-transparent"></span>
+        
+        <!-- Université ESCAT 2025 -->
+        <div class="reveal relative mb-10">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold">Université ESCAT 2025</h3>
+          <p class="text-xs text-gray-400">2025</p>
+          <p class="mt-2 text-gray-300">Licence en Génie Informatique & Réseau</p>
+        </div>
+
+        <!-- Lycée Technique Industriel 1er Mai 2020-2021 -->
+        <div class="reveal relative mb-10">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold">LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI</h3>
+          <p class="text-xs text-gray-400">2020 - 2021</p>
+          <p class="mt-2 text-gray-300">Baccalauréat En Réseaux & Télécommunications</p>
+        </div>
+
+        <!-- Formation iConnect -->
+        <div class="reveal relative">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold">Formation</h3>
+          <p class="text-xs text-gray-400">2021 - 2023</p>
+          <p class="mt-2 text-gray-300">iconnect</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Projets</h2>
+          <p class="text-gray-300 mt-2">Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack.</p>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <button data-filter="all" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Tous</button>
+          <button data-filter="laravel" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Laravel</button>
+          <button data-filter="wordpress" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">WordPress</button>
+          <button data-filter="automatisation" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Automatisation</button>
+        </div>
+      </div>
+
+      <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- Projet: Maknet Fashion Week -->
+        <article class="proj reveal group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition proj--laravel">
+          <img src="assets/maknet_capture.jpg" alt="Capture du site Maknet Fashion Week" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-5">
+            <header class="flex items-start justify-between gap-3">
+              <h3 class="text-lg font-semibold">Maknet Fashion Week – Pré‑inscriptions</h3>
+              <span class="px-2 py-1 text-xs rounded bg-brand-500/20 border border-brand-500/30">En cours</span>
+            </header>
+            <p class="mt-2 text-sm text-gray-300">Plateforme de pré‑inscription pour un événement de mode : formulaires validés côté serveur, gestion des listes et export. Focus performance & UX.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-xs text-gray-200">
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">PHP</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Laravel</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">MySQL</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Bootstrap</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href="https://maknet-fashion-week.com" target="_blank" class="px-3 py-2 rounded-lg bg-brand-500 text-gray-900 font-medium hover:bg-brand-400">Demo</a>
+              <a href="#" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Code</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-      
-        <!-- Section Contact -->
-        <section id="contact" class="py-16 bg-gray-800 rounded-lg fade-in">
-            <h2 class="text-3xl font-semibold text-teal-400 mb-4">Contact</h2>
-            <p class="text-gray-300 mb-6">N'hésitez pas à me contacter pour toute collaboration ou question.</p>
-            <form action="https://formsubmit.co/mg.christ.henoc@gmail.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Email Configuration -->
-                <input type="hidden" name="_subject" value="Message depuis votre portfolio">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="name" placeholder="Votre nom" class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
-                <input type="email" name="email" placeholder="Votre email" class="p-3 rounded-lg bg-gray-900 text-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
-                <textarea name="message" placeholder="Votre message" class="p-3 rounded-lg bg-gray-900 text-gray-300 md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg md:col-span-2 transition-all">Envoyer</button>
-            </form>
-        </section>
-    </main>
+        <!-- Projet: CashCraft -->
+        <article class="proj reveal group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition proj--wordpress">
+          <img src="assets/cash.PNG" alt="Capture de CashCraft Entreprise" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">CashCraft – Plateforme e‑commerce & formations</h3>
+            <p class="mt-2 text-sm text-gray-300">Site vitrine + tunnel d'achat de formations. Intégration paiements, gestion des produits et espaces membres.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-xs text-gray-200">
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">WordPress</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">WooCommerce</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">MySQL</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href="https://cashcraft-entreprise.com" target="_blank" class="px-3 py-2 rounded-lg bg-brand-500 text-gray-900 font-medium hover:bg-brand-400">Voir</a>
+              <a href="#" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Code</a>
+            </div>
+          </div>
+        </article>
 
-    <footer class="py-6 bg-gray-900 text-center">
-        <p>&copy; 2024 Christ-Henoc Moungabio. Tous droits réservés.</p>
-    </footer>
+        <!-- Projet: ESCAT WordPress -->
+        <article class="proj reveal group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition proj--wordpress">
+          <img src="assets/escat_capture.jpg" alt="Capture du site ESCAT" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">ESCAT – Site institutionnel</h3>
+            <p class="mt-2 text-sm text-gray-300">Site d'école : pages programmes, admissions, blog. Thème personnalisé et optimisation des performances.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-xs text-gray-200">
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">WordPress</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Tailwind</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href="https://sites.google.com/d/110vL2m4mlYRX-9fJyFbw8MGM8kApNFzB/p/1dgsxPwKhVZNeOK1-9eMc0sPFSw7yBkin/edit" target="_blank" class="px-3 py-2 rounded-lg bg-brand-500 text-gray-900 font-medium hover:bg-brand-400">Voir</a>
+              <a href="#" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet: AutoFlow (n8n) -->
+        <article class="proj reveal group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition proj--automatisation">
+          <img src="assets/autoflow_capture.jpg" alt="Capture du workflow n8n AutoFlow" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">AutoFlow – Automatisation e‑mails & stockage</h3>
+            <p class="mt-2 text-sm text-gray-300">Workflows n8n : tri des e‑mails, sauvegarde de PJ dans le cloud, logs et notifications. Diminution des tâches répétitives.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-xs text-gray-200">
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">n8n</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Node</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">API</li>
+            </ul>
+            <div class="mt-4 flex gap-3">
+              <a href="#" class="px-3 py-2 rounded-lg bg-brand-500 text-gray-900 font-medium hover:bg-brand-400">Demo</a>
+              <a href="#" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Doc</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet: Réseau / Infra (vignette) -->
+        <article class="proj reveal group rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition">
+          <img src="assets/network.jpg" alt="Configuration réseau" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-5">
+            <h3 class="text-lg font-semibold">Déploiements réseaux – PME</h3>
+            <p class="mt-2 text-sm text-gray-300">Configurations, segmentation, sécurité, supervision légère. Documentation et transfert de compétences.</p>
+            <ul class="mt-3 flex flex-wrap gap-2 text-xs text-gray-200">
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Cisco/HP</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Linux</li>
+              <li class="px-2 py-1 rounded bg-white/10 border border-white/10">Shell</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-16 bg-gradient-to-b from-gray-900 to-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Compétences</h2>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">PHP</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Laravel</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Symfony</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">HTML</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">CSS</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">JavaScript</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Bootstrap</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Tailwind</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">MySQL</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">PostgreSQL</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">UML</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Docker</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Git & GitHub</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">WordPress</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Réseaux</span>
+        <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">n8n</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div class="reveal">
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Contact</h2>
+          <p class="mt-3 text-gray-300">Parlons de votre projet : délais, budget, objectifs. Réponse rapide.</p>
+          <div class="mt-6 space-y-2 text-sm text-gray-300">
+            <p><a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400">mg.christ.henoc@gmail.com</a></p>
+            <p><a href="tel:+242069688432" class="hover:text-brand-400">+242 06 968 84 32</a> (WhatsApp)</p>
+          </div>
+        </div>
+        <form action="https://formsubmit.co/mg.christ.henoc@gmail.com" method="POST" class="reveal p-6 rounded-2xl border border-white/10 bg-white/5 grid grid-cols-1 gap-4">
+          <!-- FormSubmit options -->
+          <input type="hidden" name="_subject" value="Message depuis le portfolio / christ-henoc.dev">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="#thanks">
+
+          <div>
+            <label class="block text-sm mb-1">Nom</label>
+            <input name="name" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Votre nom" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1">Email</label>
+            <input type="email" name="email" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="vous@exemple.com" />
+          </div>
+          <div>
+            <label class="block text-sm mb-1">Message</label>
+            <textarea name="message" rows="4" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Décrivez votre besoin en quelques lignes"></textarea>
+          </div>
+          <button type="submit" class="mt-2 px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400">Envoyer</button>
+        </form>
+      </div>
+      <div id="thanks" class="sr-only">Merci pour votre message !</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
+      <div class="mt-3 flex justify-center gap-4">
+        <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#home" class="fixed bottom-6 right-6 p-3 rounded-full bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10" aria-label="Retour en haut">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 19a1 1 0 0 1-1-1V8.41l-3.3 3.3a1 1 0 1 1-1.4-1.42l5-5a1 1 0 0 1 1.4 0l5 5a1 1 0 1 1-1.4 1.42L13 8.4V18a1 1 0 0 1-1 1z"/></svg>
+  </a>
+
+  <!-- Schema.org  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christ-Henoc Moungabio",
+    "jobTitle": "Développeur Web Back-End",
+    "email": "mg.christ.henoc@gmail.com",
+    "telephone": "+242069688432",
+    "url": "",
+    "worksFor": {"@type":"Organization","name":"Freelance"},
+    "knowsAbout": ["PHP","Laravel","Symfony","Automatisation n8n","MySQL","PostgreSQL","API"]
+  }
+  </script>
+
+  <!-- Scripts -->
+  <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Filtre projets
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#projectGrid .proj');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      const key = btn.dataset.filter;
+      buttons.forEach(b => b.classList.remove('ring-1','ring-brand-400'));
+      btn.classList.add('ring-1','ring-brand-400');
+      cards.forEach(c => {
+        if (key === 'all') { c.classList.remove('hidden'); return; }
+        const match = (key === 'laravel' && c.classList.contains('proj--laravel')) ||
+                      (key === 'wordpress' && c.classList.contains('proj--wordpress')) ||
+                      (key === 'automatisation' && c.classList.contains('proj--automatisation'));
+        c.classList.toggle('hidden', !match);
+      });
+    }));
+  </script>
 </body>
-
 </html>
