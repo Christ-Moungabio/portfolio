@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boutique en ligne Lina Shop - Vente d'accessoires et de vêtements">
+    <title>Projet - Lina Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
+        .carousel-container { scroll-snap-type: x mandatory; }
+        .carousel-item { scroll-snap-align: start; }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="text-xl font-bold text-pink-400">
+                    Lina Shop
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-300 hover:text-white">Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="gradient-bg py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Boutique en ligne – Lina Shop</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Vente en ligne d’accessoires et de vêtements tendance, avec un design moderne et une expérience utilisateur fluide.
+            </p>
+        </div>
+    </section>
+
+    <!-- Image Carousel -->
+    <section class="py-16 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Aperçu du Projet</h2>
+            <div class="relative">
+                <div class="carousel-container flex overflow-x-auto space-x-4 pb-4">
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina1.PNG" alt="Accueil Lina Shop" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina2.PNG" alt="Page produits" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina3.PNG" alt="Détail produit" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina4.PNG" alt="Panier" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina5.PNG" alt="Paiement" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
+                        <img src="assets/lina6.PNG" alt="Compte utilisateur" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                </div>
+                <!-- Carousel Navigation -->
+                <div class="flex justify-center mt-4 space-x-2">
+                    <button onclick="scrollCarousel(-1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image précédente">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="scrollCarousel(1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image suivante">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Description -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-8">Description du Projet</h2>
+            <div class="prose prose-lg prose-invert mx-auto">
+                <h3 class="text-2xl font-semibold mb-4">Présentation</h3>
+                <p class="mb-6">
+                    Lina Shop est une boutique en ligne qui propose une large gamme d’accessoires et de vêtements pour toutes les occasions. 
+                    Le site permet de parcourir les produits, de gérer un panier, et de finaliser les achats en toute sécurité.
+                </p>
+
+                <h3 class="text-2xl font-semibold mb-4">Objectifs</h3>
+                <ul class="list-disc list-inside mb-6 space-y-2">
+                    <li>Présenter les produits avec des visuels attractifs</li>
+                    <li>Faciliter la navigation et la recherche</li>
+                    <li>Gérer efficacement le panier et les commandes</li>
+                    <li>Offrir un paiement sécurisé</li>
+                    <li>Fidéliser les clients grâce à un espace compte</li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold mb-4">Fonctionnalités principales</h3>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Catalogue produits</h4>
+                        <p>Présentation claire avec filtres par catégorie et prix.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Gestion du panier</h4>
+                        <p>Ajout, suppression et modification des quantités en temps réel.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Paiement sécurisé</h4>
+                        <p>Intégration de passerelles de paiement fiables.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Compte client</h4>
+                        <p>Historique des commandes et suivi des livraisons.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function scrollCarousel(direction) {
+            const container = document.querySelector('.carousel-container');
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+    </script>
+</body>
+                          </html>
+                          
