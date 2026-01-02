@@ -2,135 +2,197 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Application Web de gestion et de paiement d'activités - inscriptions, vagues et suivi complet">
-    <title>Projet - Gestion & Paiement Activités</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
-        .carousel-container { scroll-snap-type: x mandatory; }
-        .carousel-item { scroll-snap-align: start; }
-    </style>
-</head>
-<body class="bg-gray-900 text-white">
-    <!-- Navigation -->
-    <nav class="bg-gray-800 shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="text-xl font-bold text-blue-400">
-                    Gestion & Paiement Activités
-                </a>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-300 hover:text-white">Retour à l'accueil</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="gradient-bg py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Application Web – Gestion & Paiement Activités</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
-                Plateforme flexible pour organiser des activités, gérer des vagues d’inscription et suivre les paiements en toute simplicité.
-            </p>
-        </div>
-    </section>
-
-    <!-- Image Carousel -->
-    <section class="py-16 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">Galerie du Projet</h2>
-            <div class="relative">
-                <div class="carousel-container flex overflow-x-auto space-x-4 pb-4">
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion1.PNG" alt="Dashboard" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion2.PNG" alt="Gestion des activités" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion3.PNG" alt="Gestion des vagues" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion4.PNG" alt="Inscriptions" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion5.PNG" alt="Suivi des paiements" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                    <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/gestion6.PNG" alt="Rapports et statistiques" class="w-full h-64 object-cover rounded-lg">
-                    </div>
-                </div>
-                <!-- Carousel Navigation -->
-                <div class="flex justify-center mt-4 space-x-2">
-                    <button onclick="scrollCarousel(-1)" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg" title="Image précédente">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button onclick="scrollCarousel(1)" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg" title="Image suivante">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Description -->
-    <section class="py-16 bg-gray-900">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Description du Projet</h2>
-            <div class="prose prose-lg prose-invert mx-auto">
-                <h3 class="text-2xl font-semibold mb-4">Présentation</h3>
-                <p class="mb-6">
-                    Cette application web permet aux organisateurs d’activités de gérer tout le processus, 
-                    depuis la création de l’événement jusqu’à l’encaissement des paiements. 
-                    Les activités peuvent être structurées en plusieurs vagues d’inscription, 
-                    avec des tarifs et des dates spécifiques.
-                </p>
-
-                <h3 class="text-2xl font-semibold mb-4">Objectifs</h3>
-                <ul class="list-disc list-inside mb-6 space-y-2">
-                    <li>Créer et organiser facilement des activités</li>
-                    <li>Gérer des vagues d’inscription avec paramètres spécifiques</li>
-                    <li>Suivre les paiements et générer des rapports détaillés</li>
-                    <li>Offrir un portail d’inscription simple et sécurisé</li>
-                    <li>Optimiser la communication avec les participants</li>
-                </ul>
-
-                <h3 class="text-2xl font-semibold mb-4">Fonctionnalités principales</h3>
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Gestion des activités</h4>
-                        <p>Création, modification et suivi des activités avec détails, tarifs et quotas.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Gestion des vagues</h4>
-                        <p>Organisation des inscriptions par vagues, chacune avec ses dates et tarifs.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Inscriptions en ligne</h4>
-                        <p>Portail d’inscription accessible aux participants avec paiement sécurisé.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Rapports & statistiques</h4>
-                        <p>Tableaux et graphiques pour suivre l’évolution des inscriptions et des recettes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function scrollCarousel(direction) {
-            const container = document.querySelector('.carousel-container');
-            const scrollAmount = container.clientWidth;
-            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function(){
+      const l = localStorage.getItem('lang');
+      if(l) document.documentElement.lang = l;
+      document.documentElement.classList.add('lang-flash');
+    })();
+  </script>
+  <style>.lang-flash body{ visibility: hidden; }</style>
+  <meta name="description" content="Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité." data-fr="Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité." data-en="Flexible platform to organize activities, manage registration waves and track payments with ease." />
+  <meta property="og:description" content="Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité." data-fr="Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité." data-en="Flexible platform to organize activities, manage registration waves and track payments with ease." />
+  <meta property="og:title" content="Gestion & Paiement Activités - Christ-Henoc Moungabio" data-fr="Gestion & Paiement Activités - Christ-Henoc Moungabio" data-en="Activities Management & Payment - Christ-Henoc Moungabio" />
+  <title data-fr="Gestion & Paiement Activités - Christ-Henoc Moungabio" data-en="Activities Management & Payment - Christ-Henoc Moungabio">Gestion & Paiement Activités - Christ-Henoc Moungabio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#e6fffb', 100: '#b3fff2', 200: '#80ffe8', 300: '#4dffdf',
+              400: '#1affd5', 500: '#00e6bc', 600: '#00b396', 700: '#008071',
+              800: '#004e4b', 900: '#002b29'
+            }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.25)' }
         }
-    </script>
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-poppins">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur bg-gray-950/70 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="w-10 h-10 rounded-full ring-2 ring-brand-500/40" loading="lazy">
+        <span class="font-semibold tracking-wide group-hover:text-brand-400">Christ‑Henoc Moungabio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="hover:text-brand-400" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+        <button id="langToggle" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Ouvrir le menu" data-fr-aria="Ouvrir le menu" data-en-aria="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
+    <div class="px-4 py-4 space-y-3 text-sm">
+      <a href="index.html" class="block hover:text-brand-400">Portfolio</a>
+      <button id="langToggleMobile" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" data-fr="Gestion & Paiement Activités" data-en="Activities Management & Payment">Gestion & Paiement Activités</h1>
+        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl" data-fr="Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité." data-en="Flexible platform to organize activities, manage registration waves and track payments with ease.">
+          Plateforme flexible pour organiser des activités, gérer des vagues d'inscription et suivre les paiements en toute simplicité.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#gallery" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition" data-fr="Voir la galerie" data-en="View gallery">Voir la galerie</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion1.PNG" alt="Interface principale de Gestion & Paiement Activités" data-en-alt="Main interface of Activities Management & Payment" class="w-full rounded-lg shadow-soft">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESCRIPTION -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-10 items-start">
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="À propos du projet" data-en="About the project">À propos du projet</h2>
+        <p class="mt-4 text-gray-300 leading-relaxed" data-fr="Cette application web permet aux organisateurs d'activités de gérer tout le processus, depuis la création de l'événement jusqu'à l'encaissement des paiements. Les activités peuvent être structurées en plusieurs vagues d'inscription, avec des tarifs et des dates spécifiques. Développée avec Laravel pour un back-end robuste et MySQL pour la gestion des données, cette plateforme offre une interface intuitive avec Tailwind CSS pour une expérience utilisateur moderne." data-en="This web application allows event organizers to manage the entire process, from event creation to payment collection. Activities can be structured into multiple registration waves with specific prices and dates. Built with Laravel for a robust backend and MySQL for data management, the platform offers an intuitive interface using Tailwind CSS for a modern user experience.">
+          Cette application web permet aux organisateurs d'activités de gérer tout le processus, depuis la création de l'événement jusqu'à l'encaissement des paiements. Les activités peuvent être structurées en plusieurs vagues d'inscription, avec des tarifs et des dates spécifiques. Développée avec Laravel pour un back-end robuste et MySQL pour la gestion des données, cette plateforme offre une interface intuitive avec Tailwind CSS pour une expérience utilisateur moderne.
+        </p>
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold mb-4" data-fr="Fonctionnalités principales" data-en="Main features">Fonctionnalités principales</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2" data-fr="Gestion des activités" data-en="Activities management">Gestion des activités</h4>
+              <p class="text-sm text-gray-300" data-fr="Création, modification et suivi des activités avec détails, tarifs et quotas." data-en="Create, edit and track activities with details, pricing and quotas.">Création, modification et suivi des activités avec détails, tarifs et quotas.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2" data-fr="Gestion des vagues" data-en="Waves management">Gestion des vagues</h4>
+              <p class="text-sm text-gray-300">Organisation des inscriptions par vagues, chacune avec ses dates et tarifs.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Inscriptions en ligne</h4>
+              <p class="text-sm text-gray-300">Portail d'inscription accessible aux participants avec paiement sécurisé.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Rapports & statistiques</h4>
+              <p class="text-sm text-gray-300">Tableaux et graphiques pour suivre l'évolution des inscriptions et des recettes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="reveal">
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold mb-3">Technologies utilisées</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Laravel</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">MySQL</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Tailwind CSS</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">PHP</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10 text-center" data-fr="Galerie du projet" data-en="Project Gallery">Galerie du projet</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <div class="reveal">
+        <img src="assets/gestion/gestion1.PNG" alt="Dashboard principal" data-en-alt="Main dashboard" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Dashboard principal" data-en="Main Dashboard">Dashboard principal</p>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion2.PNG" alt="Gestion des activités" data-en-alt="Activities management" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Gestion des activités" data-en="Activity Management">Gestion des activités</p>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion3.PNG" alt="Gestion des vagues" data-en-alt="Wave management" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Gestion des vagues" data-en="Wave Management">Gestion des vagues</p>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion4.PNG" alt="Inscriptions" data-en-alt="Registrations" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Inscriptions" data-en="Registrations">Inscriptions</p>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion5.PNG" alt="Suivi des paiements" data-en-alt="Payment tracking" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Suivi des paiements" data-en="Payment Tracking">Suivi des paiements</p>
+      </div>
+      <div class="reveal">
+        <img src="assets/gestion/gestion6.PNG" alt="Rapports et statistiques" data-en-alt="Reports and statistics" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Rapports et statistiques" data-en="Reports and Statistics">Rapports et statistiques</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+
+</script>
+<script src="assets/lang.js"></script>
+
 </body>
-  </html>
+</html>
                   

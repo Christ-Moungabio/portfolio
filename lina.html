@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Boutique en ligne Lina Shop - Vente d'accessoires et de vêtements">
-    <title>Projet - Lina Shop</title>
+    <script>
+      (function(){
+        const l = localStorage.getItem('lang');
+        if(l) document.documentElement.lang = l;
+        document.documentElement.classList.add('lang-flash');
+      })();
+    </script>
+    <style>.lang-flash body{ visibility: hidden; }</style>
+    <meta name="description" content="Présentation du projet Lina - Boutique et gestion produit" data-fr="Présentation du projet Lina - Boutique et gestion produit" data-en="Lina project presentation - shop and product management" />
+    <meta property="og:description" content="Présentation du projet Lina - Boutique et gestion produit" data-fr="Présentation du projet Lina - Boutique et gestion produit" data-en="Lina project presentation - shop and product management" />
+    <meta property="og:title" content="Lina" data-fr="Lina" data-en="Lina" />
+    <title data-fr="Lina" data-en="Lina">Lina</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,7 +35,8 @@
                     Lina Shop
                 </a>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-300 hover:text-white">Retour à l'accueil</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white" data-fr="Retour à l'accueil" data-en="Back to home">Retour à l'accueil</a>
+                    <button id="langToggle" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
                 </div>
             </div>
         </div>
@@ -33,8 +45,8 @@
     <!-- Hero Section -->
     <section class="gradient-bg py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Boutique en ligne – Lina Shop</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
+            <h1 class="text-5xl font-bold mb-6" data-fr="Boutique en ligne – Lina Shop" data-en="Online store – Lina Shop">Boutique en ligne – Lina Shop</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-fr="Vente en ligne d’accessoires et de vêtements tendance, avec un design moderne et une expérience utilisateur fluide." data-en="Online sale of trendy accessories and clothing, with a modern design and smooth UX">
                 Vente en ligne d’accessoires et de vêtements tendance, avec un design moderne et une expérience utilisateur fluide.
             </p>
         </div>
@@ -67,10 +79,10 @@
                 </div>
                 <!-- Carousel Navigation -->
                 <div class="flex justify-center mt-4 space-x-2">
-                    <button onclick="scrollCarousel(-1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image précédente">
+                    <button onclick="scrollCarousel(-1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image précédente" data-fr="Image précédente" data-en="Previous image">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button onclick="scrollCarousel(1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image suivante">
+                    <button onclick="scrollCarousel(1)" class="bg-pink-600 hover:bg-pink-700 px-4 py-2 rounded-lg" title="Image suivante" data-fr="Image suivante" data-en="Next image">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -128,6 +140,7 @@
             container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
         }
     </script>
+    <script src="assets/lang.js"></script>
 </body>
                           </html>
                           

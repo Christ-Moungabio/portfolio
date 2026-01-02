@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function(){
+      const l = localStorage.getItem('lang');
+      if(l) document.documentElement.lang = l;
+      document.documentElement.classList.add('lang-flash');
+    })();
+  </script>
+  <style>.lang-flash body{ visibility: hidden; }</style>
+  <meta name="description" content="Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés." data-fr="Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés." data-en="Mobile e-commerce application with smooth user experience and integrated payments." />
+  <meta property="og:description" content="Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés." data-fr="Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés." data-en="Mobile e-commerce application with smooth user experience and integrated payments." />
+  <meta property="og:title" content="Maknet Shop" data-fr="Maknet Shop" data-en="Maknet Shop" />
+  <title data-fr="Maknet Shop" data-en="Maknet Shop">Maknet Shop</title>
+  <title>Maknet Shop - Christ-Henoc Moungabio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { poppins: ['Poppins', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#e6fffb', 100: '#b3fff2', 200: '#80ffe8', 300: '#4dffdf',
+              400: '#1affd5', 500: '#00e6bc', 600: '#00b396', 700: '#008071',
+              800: '#004e4b', 900: '#002b29'
+            }
+          },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.25)' }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all .7s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-poppins">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 backdrop-blur bg-gray-950/70 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="w-10 h-10 rounded-full ring-2 ring-brand-500/40" loading="lazy">
+        <span class="font-semibold tracking-wide group-hover:text-brand-400">Christ‑Henoc Moungabio</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="hover:text-brand-400" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+        <button id="langToggle" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" data-fr="Maknet Shop" data-en="Maknet Shop">Maknet Shop</h1>
+        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl" data-fr="Marketplace en ligne connectant vendeurs et acheteurs dans un environnement sécurisé." data-en="Online marketplace connecting sellers and buyers in a secure environment.">Marketplace en ligne connectant vendeurs et acheteurs dans un environnement sécurisé.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#gallery" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition">Voir la galerie</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="assets/maknet-shop/fashion1.PNG" alt="Interface principale de Maknet Shop" data-en-alt="Main interface of Maknet Shop" class="w-full rounded-lg shadow-soft">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESCRIPTION -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-10 items-start">
+      <div class="md:col-span-2 reveal">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="À propos du projet" data-en="About the project">À propos du projet</h2>
+        <p class="mt-4 text-gray-300 leading-relaxed" data-fr="Maknet Shop est une marketplace en ligne conçue pour connecter les vendeurs et les acheteurs dans un environnement sécurisé et convivial. Elle offre des fonctionnalités avancées comme la gestion des produits, les paiements intégrés, les avis clients, et un système de recherche intelligent. Développée avec Next.js pour une performance optimale et une expérience utilisateur fluide, et Symfony pour un back-end robuste, cette plateforme permet aux utilisateurs de créer des boutiques virtuelles personnalisées." data-en="Maknet Shop is an online marketplace designed to connect sellers and buyers in a secure, user-friendly environment. It provides advanced features like product management, integrated payments, customer reviews and intelligent search. Built with Next.js for optimal performance and Symfony for a robust backend, the platform enables users to create customizable virtual shops.">
+          Maknet Shop est une marketplace en ligne conçue pour connecter les vendeurs et les acheteurs dans un environnement sécurisé et convivial. Elle offre des fonctionnalités avancées comme la gestion des produits, les paiements intégrés, les avis clients, et un système de recherche intelligent. Développée avec Next.js pour une performance optimale et une expérience utilisateur fluide, et Symfony pour un back-end robuste, cette plateforme permet aux utilisateurs de créer des boutiques virtuelles personnalisées.
+        </p>
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold mb-4">Fonctionnalités principales</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Gestion produits</h4>
+              <p class="text-sm text-gray-300">Système complet de gestion des inventaires et produits.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Paiements intégrés</h4>
+              <p class="text-sm text-gray-300">Intégration Stripe et PayPal pour transactions sûres.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Boutiques virtuelles</h4>
+              <p class="text-sm text-gray-300">Création de boutiques personnalisées pour vendeurs.</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <h4 class="font-semibold mb-2">Tableaux de bord</h4>
+              <p class="text-sm text-gray-300">Analytics détaillés pour suivi des ventes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="reveal">
+        <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
+          <h3 class="font-semibold mb-3">Technologies utilisées</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Next.js</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Symfony</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">MySQL</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Stripe</span>
+            <span class="px-3 py-1 text-xs rounded bg-white/10">Tailwind CSS</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<!-- <section id="gallery" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10 text-center" data-fr="Galerie du projet" data-en="Project gallery">Galerie du projet</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+1" alt="Page d'accueil" data-en-alt="Home page" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400" data-fr="Page d'accueil" data-en="Home page">Page d'accueil</p>
+      </div>
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+2" alt="Catalogue produits" data-en-alt="Products catalog" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400">Catalogue produits</p>
+      </div>
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+3" alt="Boutique vendeur" data-en-alt="Vendor shop" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400">Boutique vendeur</p>
+      </div>
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+4" alt="Paiement" data-en-alt="Payment" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400">Paiement</p>
+      </div>
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+5" alt="Dashboard vendeur" data-en-alt="Vendor dashboard" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400">Dashboard vendeur</p>
+      </div>
+      <div class="reveal">
+        <img src="https://via.placeholder.com/400x300/00e6bc/ffffff?text=Maknet+Shop+6" alt="Avis clients" data-en-alt="Customer reviews" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <p class="mt-2 text-sm text-gray-400">Avis clients</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- FOOTER -->
+<footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+<script src="assets/lang.js"></script>
+
+</body>
+</html>

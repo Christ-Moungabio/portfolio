@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projet Brazza Na Ndule Talent - Concours musical pour révéler les nouveaux talents de la scène urbaine congolaise">
-    <title>Projet - Brazza Na Ndule Talent</title>
+    <script>
+      (function(){
+        const l = localStorage.getItem('lang');
+        if(l) document.documentElement.lang = l;
+        document.documentElement.classList.add('lang-flash');
+      })();
+    </script>
+    <style>.lang-flash body{ visibility: hidden; }</style>
+    <meta name="description" content="Projet Brazza Na Ndule Talent - Concours musical pour révéler les nouveaux talents de la scène urbaine congolaise" data-fr="Projet Brazza Na Ndule Talent - Concours musical pour révéler les nouveaux talents de la scène urbaine congolaise" data-en="Brazza Na Ndule Talent project - Music competition to reveal new talents from the Congolese urban scene" />
+    <meta property="og:description" content="Projet Brazza Na Ndule Talent - Concours musical pour révéler les nouveaux talents de la scène urbaine congolaise" data-fr="Projet Brazza Na Ndule Talent - Concours musical pour révéler les nouveaux talents de la scène urbaine congolaise" data-en="Brazza Na Ndule Talent project - Music competition to reveal new talents from the Congolese urban scene" />
+    <meta property="og:title" content="Projet Brazza Na Ndule Talent" data-fr="Projet Brazza Na Ndule Talent" data-en="Brazza Na Ndule Talent Project" />
+    <title data-fr="Projet - Brazza Na Ndule Talent" data-en="Project - Brazza Na Ndule Talent">Projet - Brazza Na Ndule Talent</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -26,7 +36,8 @@
 
                 </a>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-300 hover:text-white">Retour à l'accueil</a>
+                    <a href="index.html" class="text-gray-300 hover:text-white" data-fr="Retour à l'accueil" data-en="Back to home">Retour à l'accueil</a>
+                    <button id="langToggle" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
                 </div>
             </div>
         </div>
@@ -35,10 +46,8 @@
     <!-- Hero Section -->
     <section class="gradient-bg py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl font-bold mb-6">Projet Brazza Na Ndule Talent</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
-                Une plateforme de concours musical innovante qui révèle les talents de la scène urbaine congolaise
-            </p>
+            <h1 class="text-5xl font-bold mb-6" data-fr="Projet Brazza Na Ndule Talent" data-en="Brazza Na Ndule Talent Project">Projet Brazza Na Ndule Talent</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-fr="Une plateforme de concours musical innovante qui révèle les talents de la scène urbaine congolaise" data-en="An innovative music competition platform that reveals the talents of the Congolese urban scene">Une plateforme de concours musical innovante qui révèle les talents de la scène urbaine congolaise</p>
         </div>
     </section>
 
@@ -50,25 +59,25 @@
             <div class="relative">
                 <div class="carousel-container flex overflow-x-auto space-x-4 pb-4">
                     <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/brazza1.PNG" alt="Interface principale" class="w-full h-64 object-cover rounded-lg">
+                        <img src="assets/brazza1.PNG" alt="Interface principale" data-en-alt="Main interface" class="w-full h-64 object-cover rounded-lg">
                     </div>
                     <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/brazza2.PNG" alt="Système de vote" class="w-full h-64 object-cover rounded-lg">
+                        <img src="assets/brazza2.PNG" alt="Système de vote" data-en-alt="Voting system" class="w-full h-64 object-cover rounded-lg">
                     </div>
                     <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/brazza3.PNG" alt="Tableau de bord" class="w-full h-64 object-cover rounded-lg">
+                        <img src="assets/brazza3.PNG" alt="Tableau de bord" data-en-alt="Dashboard" class="w-full h-64 object-cover rounded-lg">
                     </div>
                     <div class="carousel-item flex-shrink-0 w-full md:w-1/3">
-                        <img src="assets/brazza4.PNG" alt="Profil utilisateur" class="w-full h-64 object-cover rounded-lg">
+                        <img src="assets/brazza4.PNG" alt="Profil utilisateur" data-en-alt="User profile" class="w-full h-64 object-cover rounded-lg">
                     </div>
                 </div>
                 
                 <!-- Carousel Navigation -->
                 <div class="flex justify-center mt-4 space-x-2">
-                    <button onclick="scrollCarousel(-1)" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg" title="Image précédente">
+                    <button onclick="scrollCarousel(-1)" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg" title="Image précédente" data-fr="Image précédente" data-en="Previous image">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button onclick="scrollCarousel(1)" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg" title="Image suivante">
+                    <button onclick="scrollCarousel(1)" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg" title="Image suivante" data-fr="Image suivante" data-en="Next image">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                 </div>
@@ -79,7 +88,7 @@
     <!-- Project Description -->
     <section class="py-16 bg-gray-900">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8">Description du Projet</h2>
+            <h2 class="text-3xl font-bold text-center mb-8" data-fr="Description du Projet" data-en="Project Description">Description du Projet</h2>
             
             <div class="prose prose-lg prose-invert mx-auto">
                 <h3 class="text-2xl font-semibold mb-4">Présentation</h3>
@@ -170,6 +179,7 @@
             });
         });
     </script>
+    <script src="assets/lang.js"></script>
 </body>
 </html>
 

@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio de Christ-Henoc Moungabio — Développeur back-end (PHP/Laravel) avec bases front-end, automatisation n8n, intégration API et administration systèmes & réseaux.">
-  <title>Portfolio – Christ‑Henoc Moungabio</title>
+  <meta name="description" content="Portfolio de Christ-Henoc Moungabio — Développeur Full Stack (PHP/Laravel, React, React Native, Next.js, Vue) avec automatisation n8n, intégration API et administration systèmes & réseaux." data-fr="Portfolio de Christ-Henoc Moungabio — Développeur Full Stack (PHP/Laravel, React, React Native, Next.js, Vue) avec automatisation n8n, intégration API et administration systèmes & réseaux." data-en="Portfolio of Christ-Henoc Moungabio — Full Stack Developer (PHP/Laravel, React, React Native, Next.js, Vue) with n8n automation, API integrations and systems & network administration." />
+  <script>
+    (function(){
+      const l = localStorage.getItem('lang');
+      if(l) document.documentElement.lang = l;
+      // add a small class to prevent visible flash before JS applies translations
+      document.documentElement.classList.add('lang-flash');
+    })();
+  </script>
+  <style>
+    /* hide page until lang applied to avoid FOUC (removed by lang.js after init) */
+    .lang-flash body{ visibility: hidden; }
+  </style>
+  <title data-fr="Portfolio – Christ‑Henoc Moungabio" data-en="Portfolio – Christ‑Henoc Moungabio">Portfolio – Christ‑Henoc Moungabio</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,8 +42,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Portfolio – Christ‑Henoc Moungabio" />
-  <meta property="og:description" content="Développeur back-end PHP/Laravel • Automatisation n8n • Intégration d'API • Réseaux." />
+  <meta property="og:title" content="Portfolio – Christ‑Henoc Moungabio" data-fr="Portfolio – Christ‑Henoc Moungabio" data-en="Portfolio – Christ‑Henoc Moungabio" />
+  <meta property="og:description" content="Développeur Full Stack (PHP/Laravel, React, React Native, Next.js, Vue) • Automatisation n8n • Intégration d'API • Réseaux." data-fr="Développeur Full Stack (PHP/Laravel, React, React Native, Next.js, Vue) • Automatisation n8n • Intégration d'API • Réseaux." data-en="Full Stack Developer (PHP/Laravel, React, React Native, Next.js, Vue) • n8n automation • API integrations • Networks." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/cover.jpg" />
   <meta name="theme-color" content="#00e6bc" />
@@ -49,18 +61,19 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="#home" class="flex items-center gap-3 group">
-        <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" class="w-10 h-10 rounded-full ring-2 ring-brand-500/40" loading="lazy">
+        <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="w-10 h-10 rounded-full ring-2 ring-brand-500/40" loading="lazy">
         <span class="font-semibold tracking-wide group-hover:text-brand-400">Christ‑Henoc Moungabio</span>
       </a>
       <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#about" class="hover:text-brand-400">À propos</a>
-        <a href="#timeline" class="hover:text-brand-400">Parcours</a>
-        <a href="#projects" class="hover:text-brand-400">Projets</a>
-        <a href="#skills" class="hover:text-brand-400">Compétences</a>
-        <a href="#contact" class="hover:text-brand-400">Contact</a>
-        <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30" download="CV_Christ-Henoc_Moungabio.pdf">Télécharger CV</a>
+        <a href="#about" class="hover:text-brand-400" data-fr="À propos" data-en="About">À propos</a>
+        <a href="#timeline" class="hover:text-brand-400" data-fr="Parcours" data-en="Journey">Parcours</a>
+        <a href="#projects" class="hover:text-brand-400" data-fr="Projets" data-en="Projects">Projets</a>
+        <a href="#skills" class="hover:text-brand-400" data-fr="Compétences" data-en="Skills">Compétences</a>
+        <a href="#contact" class="hover:text-brand-400" data-fr="Contact" data-en="Contact">Contact</a>
+        <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30" download="CV_Christ-Henoc_Moungabio.pdf" data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</a>
+        <button id="langToggle" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
       </nav>
-      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Ouvrir le menu">
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Ouvrir le menu" data-fr-aria="Ouvrir le menu" data-en-aria="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -69,12 +82,13 @@
   </div>
   <div id="mobileMenu" class="md:hidden hidden border-t border-white/5">
     <div class="px-4 py-4 space-y-3 text-sm">
-      <a href="#about" class="block hover:text-brand-400">À propos</a>
-      <a href="#timeline" class="block hover:text-brand-400">Parcours</a>
-      <a href="#projects" class="block hover:text-brand-400">Projets</a>
-      <a href="#skills" class="block hover:text-brand-400">Compétences</a>
-      <a href="#contact" class="block hover:text-brand-400">Contact</a>
-      <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="inline-block px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30">Télécharger CV</a>
+      <a href="#about" class="block hover:text-brand-400" data-fr="À propos" data-en="About">À propos</a>
+      <a href="#timeline" class="block hover:text-brand-400" data-fr="Parcours" data-en="Journey">Parcours</a>
+      <a href="#projects" class="block hover:text-brand-400" data-fr="Projets" data-en="Projects">Projets</a>
+      <a href="#skills" class="block hover:text-brand-400" data-fr="Compétences" data-en="Skills">Compétences</a>
+      <a href="#contact" class="block hover:text-brand-400" data-fr="Contact" data-en="Contact">Contact</a>
+      <a href="assets/CV_Christ-Henoc_Moungabio.pdf" class="inline-block px-3 py-2 rounded-lg bg-brand-500/20 hover:bg-brand-500/30 border border-brand-500/30" download="CV_Christ-Henoc_Moungabio.pdf" data-fr="Télécharger CV" data-en="Download CV">Télécharger CV</a>
+      <button id="langToggleMobile" class="px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" disabled aria-disabled="true" title="Langue : Français (basculement désactivé)" aria-label="Langue : Français, basculement désactivé">FR</button>
     </div>
   </div>
 </header>
@@ -84,15 +98,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-          Développeur Back‑End <span class="text-brand-400">PHP/Laravel</span> & Automatisation
-        </h1>
-        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl">
-          Je conçois des applications web robustes, j'intègre des API et j'automatise des workflows avec <strong>n8n</strong> pour gagner du temps et réduire les erreurs. Basé à Brazzaville, ouvert aux missions <strong>freelance</strong> à distance.
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" data-fr="Développeur Full Stack <span class='text-brand-400'>Web & Mobile</span>" data-en="Full Stack <span class='text-brand-400'>Web & Mobile</span> Developer">Développeur Full Stack <span class="text-brand-400">Web & Mobile</span></h1>
+        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl" data-fr="Je transforme vos idées en solutions web et mobile fiables et modernes. Spécialisé en back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) et automatisation (n8n). Basé à Brazzaville, ouvert aux missions freelance à distance." data-en="I turn your ideas into reliable and modern web and mobile solutions. Specialized in back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) and automation (n8n). Based in Brazzaville, open to remote freelance missions.">
+          Je transforme vos idées en solutions web et mobile fiables et modernes. Spécialisé en back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) et automatisation (n8n). Basé à Brazzaville, ouvert aux missions freelance à distance.
         </p>
+        
         <div class="mt-7 flex flex-wrap gap-3">
-          <a href="#projects" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition">Voir mes projets</a>
-          <a href="#contact" class="px-5 py-3 rounded-xl border border-white/10 hover:border-brand-400/60">Me contacter</a>
+          <a href="#projects" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition" data-fr="Voir mes projets" data-en="View my projects">Voir mes projets</a>
+          <a href="#contact" class="px-5 py-3 rounded-xl border border-white/10 hover:border-brand-400/60" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
         </div>
         <ul class="mt-6 flex flex-wrap gap-3 text-xs text-gray-300">
           <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Laravel</li>
@@ -101,6 +114,9 @@
           <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">n8n & Intégrations API</li>
           <li class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Bootstrap & Tailwind</li>
         </ul>
+      </div>
+      <div class="reveal flex justify-center md:justify-end">
+        <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="w-96 h-96 object-cover rounded-full ring-8 ring-brand-500/40 shadow-2xl hover:scale-105 transition-transform duration-300" />
       </div>
     </div>
   </div>
@@ -111,19 +127,19 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-3 gap-10 items-start">
       <div class="md:col-span-2 reveal">
-        <h2 class="text-2xl md:text-3xl font-bold text-brand-300">À propos</h2>
-        <p class="mt-4 text-gray-300 leading-relaxed">
-          Titulaire d’une licence en <strong>Génie Informatique & Réseaux</strong> (ESCAT, 2025), j’interviens surtout en back‑end (<strong>PHP/Laravel</strong>) avec de solides bases front‑end (HTML, CSS, Bootstrap, JS) et une pratique de l’<strong>automatisation</strong> avec <strong>n8n</strong>. Mon approche : livrer des solutions fiables, évolutives et bien documentées.
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="À propos" data-en="About">À propos</h2>
+        <p class="mt-4 text-gray-300 leading-relaxed" data-fr="Titulaire d’une licence en <strong>Génie Informatique & Réseaux</strong> (ESCAT, 2025), je suis un développeur Full Stack maîtrisant le back‑end (<strong>PHP/Laravel</strong>), le front-end (<strong>React/Next.js/Vue</strong>), le mobile (<strong>React Native</strong>) et l’<strong>automatisation</strong> avec <strong>n8n</strong>. Mon approche : livrer des solutions fiables, évolutives et bien documentées." data-en="Holder of a degree in <strong>Computer Science & Networks</strong> (ESCAT, 2025), I am a Full Stack developer mastering back-end (<strong>PHP/Laravel</strong>), front-end (<strong>React/Next.js/Vue</strong>), mobile (<strong>React Native</strong>) and <strong>automation</strong> with <strong>n8n</strong>. My approach: deliver reliable, scalable and well-documented solutions.">
+          Titulaire d’une licence en <strong>Génie Informatique & Réseaux</strong> (ESCAT, 2025), je suis un développeur Full Stack maîtrisant le back‑end (<strong>PHP/Laravel</strong>), le front-end (<strong>React/Next.js/Vue</strong>), le mobile (<strong>React Native</strong>) et l’<strong>automatisation</strong> avec <strong>n8n</strong>. Mon approche : livrer des solutions fiables, évolutives et bien documentées.
         </p>
       </div>
       <aside class="reveal">
         <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
-          <h3 class="font-semibold mb-3">Infos rapides</h3>
+          <h3 class="font-semibold mb-3" data-fr="Infos rapides" data-en="Quick Info">Infos rapides</h3>
           <ul class="text-sm text-gray-300 space-y-2">
             <li>Brazzaville, Congo</li>
             <li>mg.christ.henoc@gmail.com</li>
             <li>+242 06 968 84 32</li>
-            <li><a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a></li>
           </ul>
         </div>
       </aside>
@@ -134,28 +150,28 @@
 <!-- TIMELINE / PARCOURS -->
 <section id="timeline" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10">Parcours</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10" data-fr="Parcours" data-en="Journey">Parcours</h2>
     <div class="relative pl-6 md:pl-10">
       <span class="absolute left-2 md:left-4 top-0 h-full w-px bg-gradient-to-b from-brand-500/60 to-transparent"></span>
 
       <!-- Timeline items -->
       <div class="reveal relative mb-10">
         <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold">Université ESCAT 2025</h3>
+        <h3 class="text-lg md:text-xl font-semibold" data-fr="Université ESCAT 2025" data-en="ESCAT University 2025">Université ESCAT 2025</h3>
         <p class="text-xs text-gray-400">2025</p>
-        <p class="mt-2 text-gray-300">Licence en Génie Informatique & Réseau</p>
+        <p class="mt-2 text-gray-300" data-fr="Licence en Génie Informatique & Réseau" data-en="Degree in Computer Science & Networks">Licence en Génie Informatique & Réseau</p>
       </div>
       <div class="reveal relative mb-10">
         <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold">LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI</h3>
+        <h3 class="text-lg md:text-xl font-semibold" data-fr="LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI" data-en="Technical High School 1st May">LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI</h3>
         <p class="text-xs text-gray-400">2020 - 2021</p>
-        <p class="mt-2 text-gray-300">Baccalauréat En Réseaux & Télécommunications</p>
+        <p class="mt-2 text-gray-300" data-fr="Baccalauréat En Réseaux & Télécommunications" data-en="Baccalaureate in Networks & Telecommunications">Baccalauréat En Réseaux & Télécommunications</p>
       </div>
       <div class="reveal relative">
         <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold">Formation iConnect</h3>
+        <h3 class="text-lg md:text-xl font-semibold" data-fr="Formation iConnect" data-en="iConnect Training">Formation iConnect</h3>
         <p class="text-xs text-gray-400">2021 - 2023</p>
-        <p class="mt-2 text-gray-300">iconnect</p>
+        <p class="mt-2 text-gray-300" data-fr="iconnect" data-en="iconnect">iconnect</p>
       </div>
     </div>
   </div>
@@ -166,21 +182,210 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
       <div>
-        <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Projets</h2>
-        <p class="text-gray-300 mt-2">Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="Projets" data-en="Projects">Projets</h2>
+        <p class="text-gray-300 mt-2" data-fr="Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack." data-en="Selection of real projects and demos. Each card contains a screenshot, description and stack.">Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack.</p>
       </div>
-      <div class="flex items-center gap-2 text-sm">
-        <button data-filter="all" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Tous</button>
-        <button data-filter="laravel" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Laravel</button>
-        <button data-filter="wordpress" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">WordPress</button>
-        <button data-filter="automatisation" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60">Automatisation</button>
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <button data-filter="all" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Tous" data-en="All">Tous</button>
+        <button data-filter="laravel" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Laravel" data-en="Laravel">Laravel</button>
+        <button data-filter="react" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="React" data-en="React">React</button>
+        <button data-filter="nextjs" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Next.js" data-en="Next.js">Next.js</button>
+        <button data-filter="vue" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Vue" data-en="Vue">Vue</button>
+        <button data-filter="wordpress" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="WordPress" data-en="WordPress">WordPress</button>
+        <button data-filter="automatisation" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Automatisation" data-en="Automation">Automatisation</button>
       </div>
     </div>
 
     <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-      <!-- Tous tes projets ici comme dans ton code original -->
-      <!-- Par exemple: Maknet Fashion Week, CashCraft, AutoFlow, etc. -->
-      <!-- J'ai conservé exactement les projets que tu avais définis avec images et liens -->
+      <!-- Brazza na Ndulé Talent -->
+      <div class="proj proj--vue reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/brazza/brazza2.PNG" alt="Brazza na Ndulé Talent" data-en-alt="Brazza na Ndulé Talent" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Brazza na Ndulé Talent</h3>
+        <p class="text-gray-300 mb-4" data-fr="Plateforme de concours musical en ligne pour découvrir et promouvoir les talents musicaux africains." data-en="Online music competition platform to discover and promote African musical talents.">Plateforme de concours musical en ligne pour découvrir et promouvoir les talents musicaux africains.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Vue.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Symfony</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MySQL</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="brazza-na-ndule-talent.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Gestion & Paiement Activités -->
+      <div class="proj proj--laravel reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/gestion/gestion1.PNG" alt="Gestion & Paiement Activités" data-en-alt="Activities Management & Payment" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Gestion & Paiement Activités</h3>
+        <p class="text-gray-300 mb-4" data-fr="Application web pour organiser des activités, gérer des vagues d'inscription et suivre les paiements." data-en="Web application to organize activities, manage registration waves and track payments.">Application web pour organiser des activités, gérer des vagues d'inscription et suivre les paiements.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Laravel</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MySQL</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Tailwind CSS</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="gestion.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Lina Shop -->
+      <div class="proj proj--laravel reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/lina/lina1.PNG" alt="Lina Shop" data-en-alt="Lina Shop" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Lina Shop</h3>
+        <p class="text-gray-300 mb-4" data-fr="Boutique en ligne pour accessoires et vêtements tendance avec panier, paiement sécurisé et compte client." data-en="Online store for trendy accessories and clothing with cart, secure payment and customer account.">Boutique en ligne pour accessoires et vêtements tendance avec panier, paiement sécurisé et compte client.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Laravel</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MySQL</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Tailwind CSS</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="lina-shop.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- SecurePay -->
+      <div class="proj proj--laravel reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWYyOTM3Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzljYTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByaXZhdGUgUHJvamVjdDwvdGV4dD4KPC9zdmc+" alt="SecurePay" data-en-alt="SecurePay" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">SecurePay</h3>
+        <p class="text-gray-300 mb-4" data-fr="Plateforme de paiement sécurisé avec intégration API et chiffrement avancé." data-en="Secure payment platform with API integration and advanced encryption.">Plateforme de paiement sécurisé avec intégration API et chiffrement avancé.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Laravel</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">API</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Security</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Maknet Entreprise -->
+      <div class="proj proj--wordpress reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/maknet-entreprise/Maknet.jpg" alt="Maknet Entreprise" data-en-alt="Maknet Business" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Maknet Entreprise</h3>
+        <p class="text-gray-300 mb-4" data-fr="Site web d'entreprise pour Maknet, présentant services, équipe et contact avec design professionnel." data-en="Corporate website for Maknet, presenting services, team and contact with professional design.">Site web d'entreprise pour Maknet, présentant services, équipe et contact avec design professionnel.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">WordPress</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">PHP</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">CSS</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="maknet-entreprise.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Carte Pointage -->
+      <div class="proj proj--laravel reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/carte-pointage/cart1.PNG" alt="Carte Pointage" data-en-alt="Time Tracking Card" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Carte Pointage</h3>
+        <p class="text-gray-300 mb-4" data-fr="Système de pointage électronique pour gérer les horaires de travail et générer des rapports." data-en="Electronic time tracking system to manage work schedules and generate reports.">Système de pointage électronique pour gérer les horaires de travail et générer des rapports.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Laravel</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MySQL</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Bootstrap</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="carte-pointage.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- DevConnect -->
+      <div class="proj proj--react reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWYyOTM3Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzljYTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByaXZhdGUgUHJvamVjdDwvdGV4dD4KPC9zdmc+" alt="DevConnect" data-en-alt="DevConnect" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">DevConnect</h3>
+        <p class="text-gray-300 mb-4" data-fr="Réseau social pour développeurs avec chat en temps réel et partage de code." data-en="Social network for developers with real-time chat and code sharing.">Réseau social pour développeurs avec chat en temps réel et partage de code.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">React</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Node.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Socket.io</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Cashcraft -->
+      <div class="proj proj--react reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/cashcraft/cash.PNG" alt="Cashcraft" data-en-alt="Cashcraft" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Cashcraft</h3>
+        <p class="text-gray-300 mb-4" data-fr="Application de gestion financière personnelle avec suivi des dépenses et budgets." data-en="Personal finance management application with expense tracking and budgets.">Application de gestion financière personnelle avec suivi des dépenses et budgets.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">React</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Node.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MongoDB</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="cashcraft.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Anda -->
+      <div class="proj proj--nextjs reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/anda/anda1.PNG" alt="Anda" data-en-alt="Anda" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Anda</h3>
+        <p class="text-gray-300 mb-4" data-fr="Plateforme de blog moderne avec contenu optimisé SEO et interface utilisateur intuitive." data-en="Modern blog platform with SEO-optimized content and intuitive user interface.">Plateforme de blog moderne avec contenu optimisé SEO et interface utilisateur intuitive.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Next.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">TypeScript</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Tailwind CSS</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="anda.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Mnbk Kenaya -->
+      <div class="proj proj--vue reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/mnbk-kenaya/kenaya.PNG" alt="Mnbk Kenaya" data-en-alt="Mnbk Kenaya" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Mnbk Kenaya</h3>
+        <p class="text-gray-300 mb-4" data-fr="Application web interactive pour la gestion de projets collaboratifs avec interface moderne." data-en="Interactive web application for collaborative project management with modern interface.">Application web interactive pour la gestion de projets collaboratifs avec interface moderne.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Vue.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Firebase</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Vuetify</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="mnbk-kenaya.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- Maknet Shop -->
+      <div class="proj proj--react reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="assets/maknet-shop/fashion1.PNG" alt="Maknet Shop" data-en-alt="Maknet Shop" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">Maknet Shop</h3>
+        <p class="text-gray-300 mb-4" data-fr="Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés." data-en="Mobile e-commerce application with smooth user experience and integrated payments.">Application mobile e-commerce avec expérience utilisateur fluide et paiements intégrés.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">React Native</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Expo</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">SQLite</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="maknet-shop.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400">🔒 Code privé</a>
+        </div>
+      </div>
+
+      <!-- TaskFlow -->
+      <div class="proj proj--react reveal p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWYyOTM3Ii8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzljYTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlRhc2tGbG93PC90ZXh0Pgo8L3N2Zz4=" alt="TaskFlow" data-en-alt="TaskFlow" class="w-full h-auto max-h-96 object-contain rounded-lg mb-4">
+        <h3 class="text-xl font-semibold mb-2">TaskFlow</h3>
+        <p class="text-gray-300 mb-4" data-fr="Application web de gestion de tâches collaborative avec interface moderne, notifications en temps réel et suivi de progrès." data-en="Collaborative task management web application with modern interface, real-time notifications and progress tracking.">Application web de gestion de tâches collaborative avec interface moderne, notifications en temps réel et suivi de progrès.</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-2 py-1 text-xs rounded bg-white/10">React</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">Node.js</span>
+          <span class="px-2 py-1 text-xs rounded bg-white/10">MongoDB</span>
+        </div>
+        <div class="flex gap-3">
+          <a href="taskflow.html" class="px-4 py-2 rounded-lg bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Voir le projet" data-en="View project">Voir le projet</a>
+          <a href="#" class="px-4 py-2 rounded-lg border border-white/10 hover:border-brand-400" data-fr="🔒 Code privé" data-en="🔒 Private code">🔒 Code privé</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -188,11 +393,15 @@
 <!-- SKILLS -->
 <section id="skills" class="py-16 bg-gradient-to-b from-gray-900 to-gray-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Compétences</h2>
+    <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="Compétences" data-en="Skills">Compétences</h2>
     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">PHP</span>
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Laravel</span>
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Symfony</span>
+      <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">React</span>
+      <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">React Native</span>
+      <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Next.js</span>
+      <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">Vue</span>
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">HTML</span>
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">CSS</span>
       <span class="px-3 py-2 rounded-lg bg-white/5 border border-white/10">JavaScript</span>
@@ -215,8 +424,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid md:grid-cols-2 gap-10 items-start">
       <div class="reveal">
-        <h2 class="text-2xl md:text-3xl font-bold text-brand-300">Contact</h2>
-        <p class="mt-3 text-gray-300">Parlons de votre projet : délais, budget, objectifs. Réponse rapide.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="Contact" data-en="Contact">Contact</h2>
+        <p class="mt-3 text-gray-300" data-fr="Parlons de votre projet : délais, budget, objectifs. Réponse rapide." data-en="Let's talk about your project: deadlines, budget, objectives. Quick response.">Parlons de votre projet : délais, budget, objectifs. Réponse rapide.</p>
         <div class="mt-6 space-y-2 text-sm text-gray-300">
           <p><a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400">mg.christ.henoc@gmail.com</a></p>
           <p><a href="tel:+242069688432" class="hover:text-brand-400">+242 06 968 84 32</a> (WhatsApp)</p>
@@ -229,21 +438,21 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="#thanks">
         <div>
-          <label class="block text-sm mb-1">Nom</label>
-          <input name="name" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Votre nom" />
+          <label class="block text-sm mb-1" data-fr="Nom" data-en="Name">Nom</label>
+          <input name="name" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Votre nom" data-fr="Votre nom" data-en="Your name" />
         </div>
         <div>
-          <label class="block text-sm mb-1">Email</label>
-          <input type="email" name="email" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="vous@exemple.com" />
+          <label class="block text-sm mb-1" data-fr="Email" data-en="Email">Email</label>
+          <input type="email" name="email" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="vous@exemple.com" data-fr="vous@exemple.com" data-en="you@example.com" />
         </div>
         <div>
-          <label class="block text-sm mb-1">Message</label>
-          <textarea name="message" rows="4" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Décrivez votre besoin en quelques lignes"></textarea>
+          <label class="block text-sm mb-1" data-fr="Message" data-en="Message">Message</label>
+          <textarea name="message" rows="4" required class="w-full p-3 rounded-lg bg-gray-950 border border-white/10 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Décrivez votre besoin en quelques lignes" data-fr="Décrivez votre besoin en quelques lignes" data-en="Describe your need in a few lines"></textarea>
         </div>
-        <button type="submit" class="mt-2 px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400">Envoyer</button>
+        <button type="submit" class="mt-2 px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400" data-fr="Envoyer" data-en="Send">Envoyer</button>
       </form>
     </div>
-    <div id="thanks" class="sr-only">Merci pour votre message !</div>
+    <div id="thanks" class="sr-only" data-fr="Merci pour votre message ! Je vous répondrai dans les plus brefs délais." data-en="Thank you for your message! I will reply as soon as possible.">Merci pour votre message !</div>
   </div>
 </section>
 
@@ -252,14 +461,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
     <div class="mt-3 flex justify-center gap-4">
-      <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn">LinkedIn</a>
-      <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email">Email</a>
+      <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a>
+      <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
     </div>
   </div>
 </footer>
 
 <!-- Back to top -->
-<a href="#home" class="fixed bottom-6 right-6 p-3 rounded-full bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10" aria-label="Retour en haut">
+<a href="#home" class="fixed bottom-6 right-6 p-3 rounded-full bg-white/5 border border-white/10 backdrop-blur hover:bg-white/10" aria-label="Retour en haut" data-fr-aria="Retour en haut" data-en-aria="Back to top">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 19a1 1 0 0 1-1-1V8.41l-3.3 3.3a1 1 0 1 1-1.4-1.42l5-5a1 1 0 0 1 1.4 0l5 5a1 1 0 1 1-1.4 1.42L13 8.4V18a1 1 0 0 1-1 1z"/></svg>
 </a>
 
@@ -269,11 +478,11 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Christ-Henoc Moungabio",
-  "jobTitle": "Développeur Web Back-End",
+  "jobTitle": "Développeur Full Stack",
   "email": "mg.christ.henoc@gmail.com",
   "telephone": "+242069688432",
   "worksFor": {"@type":"Organization","name":"Freelance"},
-  "knowsAbout": ["PHP","Laravel","Symfony","Automatisation n8n","MySQL","PostgreSQL","API"]
+  "knowsAbout": ["PHP","Laravel","Symfony","React","React Native","Next.js","Vue","Automatisation n8n","MySQL","PostgreSQL","API"]
 }
 </script>
 
@@ -299,12 +508,27 @@
     cards.forEach(c => {
       if(key==='all'){ c.classList.remove('hidden'); return; }
       const match = (key==='laravel' && c.classList.contains('proj--laravel')) ||
+                    (key==='react' && c.classList.contains('proj--react')) ||
+                    (key==='nextjs' && c.classList.contains('proj--nextjs')) ||
+                    (key==='vue' && c.classList.contains('proj--vue')) ||
                     (key==='wordpress' && c.classList.contains('proj--wordpress')) ||
                     (key==='automatisation' && c.classList.contains('proj--automatisation'));
       c.classList.toggle('hidden', !match);
     });
   }));
+
+
+
+  // Contact form confirmation
+  if (window.location.hash === '#thanks') {
+    const thanksDiv = document.getElementById('thanks');
+    thanksDiv.classList.remove('sr-only');
+    thanksDiv.classList.add('block', 'text-center', 'text-green-400', 'font-semibold', 'mt-4');
+    const currentLang = document.documentElement.lang || 'fr';
+    thanksDiv.textContent = thanksDiv.dataset[currentLang];
+  }
 </script>
+<script src="assets/lang.js"></script>
 
 </body>
 </html>
