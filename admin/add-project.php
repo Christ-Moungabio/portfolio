@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../db.php';
+require_once '../config.php';
 require_once '../projects.php';
 
 if (!isset($_SESSION['admin_id'])) {
@@ -49,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $data = [
         'slug' => $slug,
-        'title' => trim($_POST['title']),
-        'description' => trim($_POST['description']),
-        'description_en' => trim($_POST['description_en'] ?? ''),
-        'technologies' => json_encode(array_map('trim', explode(',', $_POST['technologies']))),
-        'category' => trim($_POST['category']),
+        'title' => trim($_POST['title'] ?? ''),
+        'description' => trim($_POST['description'] ?? ''),
+        'description_en' => '',
+        'technologies' => json_encode(array_map('trim', explode(',', $_POST['technologies'] ?? ''))),
+        'category' => 'general',
         'main_image' => $mainImagePath,
         'gallery_images' => json_encode($galleryImages),
         'features' => json_encode(array_map('trim', explode(',', $_POST['features'] ?? ''))),
@@ -350,23 +350,9 @@ if (!$projectData) {
 
                 <div class="bg-gray-800 rounded-lg border border-white/10 p-8">
                     <form method="POST" enctype="multipart/form-data" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2">Titre du projet *</label>
-                                <input type="text" name="title" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2">Catégorie *</label>
-                                <select name="category" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
-                                    <option value="">Sélectionner une catégorie</option>
-                                    <option value="laravel">Laravel</option>
-                                    <option value="react">React</option>
-                                    <option value="nextjs">Next.js</option>
-                                    <option value="vue">Vue.js</option>
-                                    <option value="wordpress">WordPress</option>
-                                    <option value="automatisation">Automatisation</option>
-                                </select>
-                            </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Titre du projet *</label>
+                            <input type="text" name="title" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
                         </div>
 
                         <div>
@@ -374,10 +360,7 @@ if (!$projectData) {
                             <textarea name="description" rows="4" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" placeholder="Décrivez votre projet en français..."></textarea>
                         </div>
 
-                        <div>
-                            <label class="block text-sm font-medium text-gray-300 mb-2">Description (Anglais)</label>
-                            <textarea name="description_en" rows="4" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent" placeholder="Describe your project in English..."></textarea>
-                        </div>
+
 
                         <div>
                             <label class="block text-sm font-medium text-gray-300 mb-2">Technologies utilisées *</label>
@@ -424,5 +407,215 @@ if (!$projectData) {
             </div>
         </div>
     </div>
+
+    <!-- Technology Selection Modal -->
+    <div id="techModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                <div class="p-6 border-b border-gray-700">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-brand-400">Sélectionner les technologies</h3>
+                        <button id="closeTechModal" class="text-gray-400 hover:text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- Search Input -->
+                    <div class="mb-4">
+                        <input type="text" id="techSearch" placeholder="Rechercher une technologie..." class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                    </div>
+
+                    <!-- Popular Technologies -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-300 mb-3">Technologies populaires</h4>
+                        <div id="popularTechs" class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <!-- Technologies will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Custom Technology Input -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-300 mb-3">Ajouter une technologie personnalisée</h4>
+                        <div class="flex gap-2">
+                            <input type="text" id="customTechInput" placeholder="Nom de la technologie..." class="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                            <button id="addCustomTech" class="px-4 py-2 bg-brand-500 text-gray-900 font-semibold rounded-lg hover:bg-brand-400">Ajouter</button>
+                        </div>
+                    </div>
+
+                    <!-- Selected Technologies -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-300 mb-3">Technologies sélectionnées</h4>
+                        <div id="selectedTechList" class="flex flex-wrap gap-2 min-h-[40px] p-2 border border-gray-600 rounded-lg bg-gray-700">
+                            <!-- Selected technologies will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-6 border-t border-gray-700 flex justify-end gap-3">
+                    <button id="cancelTechModal" class="px-4 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-500">Annuler</button>
+                    <button id="confirmTechModal" class="px-4 py-2 bg-brand-500 text-gray-900 font-semibold rounded-lg hover:bg-brand-400">Confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Technology data
+        const allTechnologies = [
+            'PHP', 'Laravel', 'Symfony', 'CodeIgniter', 'WordPress',
+            'JavaScript', 'React', 'Vue.js', 'Angular', 'Next.js', 'Nuxt.js',
+            'Node.js', 'Express.js', 'NestJS', 'TypeScript',
+            'Python', 'Django', 'Flask', 'FastAPI',
+            'Java', 'Spring Boot', 'Hibernate',
+            'C#', '.NET', 'ASP.NET',
+            'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'SQLite',
+            'HTML5', 'CSS3', 'SASS', 'Tailwind CSS', 'Bootstrap',
+            'React Native', 'Flutter', 'Ionic', 'Cordova',
+            'Docker', 'Kubernetes', 'AWS', 'Azure', 'Google Cloud',
+            'Git', 'GitHub', 'GitLab', 'Bitbucket',
+            'Linux', 'Ubuntu', 'CentOS', 'Nginx', 'Apache',
+            'REST API', 'GraphQL', 'WebSocket', 'JWT',
+            'Stripe', 'PayPal', 'Twilio', 'SendGrid'
+        ];
+
+        let selectedTechnologies = [];
+
+        // Modal elements
+        const techModal = document.getElementById('techModal');
+        const openTechModalBtn = document.getElementById('openTechModal');
+        const closeTechModalBtn = document.getElementById('closeTechModal');
+        const cancelTechModalBtn = document.getElementById('cancelTechModal');
+        const confirmTechModalBtn = document.getElementById('confirmTechModal');
+        const techSearchInput = document.getElementById('techSearch');
+        const popularTechsContainer = document.getElementById('popularTechs');
+        const selectedTechList = document.getElementById('selectedTechList');
+        const customTechInput = document.getElementById('customTechInput');
+        const addCustomTechBtn = document.getElementById('addCustomTech');
+        const technologiesInput = document.getElementById('technologiesInput');
+        const selectedTechsDisplay = document.getElementById('selectedTechs');
+
+        // Initialize modal
+        function initModal() {
+            // Populate popular technologies (first 20)
+            const popularTechs = allTechnologies.slice(0, 20);
+            popularTechsContainer.innerHTML = popularTechs.map(tech => `
+                <button type="button" class="tech-option px-3 py-2 bg-gray-700 hover:bg-brand-500 hover:text-gray-900 text-gray-300 rounded-lg text-sm transition" data-tech="${tech}">
+                    ${tech}
+                </button>
+            `).join('');
+
+            // Load existing selections
+            const existingTechs = technologiesInput.value;
+            if (existingTechs) {
+                selectedTechnologies = existingTechs.split(',').map(tech => tech.trim()).filter(tech => tech);
+                updateSelectedDisplay();
+            }
+        }
+
+        // Update selected technologies display
+        function updateSelectedDisplay() {
+            selectedTechList.innerHTML = selectedTechnologies.map(tech => `
+                <span class="inline-flex items-center gap-1 px-3 py-1 bg-brand-500 text-gray-900 rounded-full text-sm">
+                    ${tech}
+                    <button type="button" class="remove-tech hover:text-red-600" data-tech="${tech}">×</button>
+                </span>
+            `).join('');
+
+            // Update hidden input
+            technologiesInput.value = selectedTechnologies.join(', ');
+
+            // Update display outside modal
+            selectedTechsDisplay.innerHTML = selectedTechnologies.map(tech => `
+                <span class="px-3 py-1 bg-brand-500 text-gray-900 rounded-full text-sm">${tech}</span>
+            `).join('');
+        }
+
+        // Add technology to selection
+        function addTechnology(tech) {
+            if (!selectedTechnologies.includes(tech)) {
+                selectedTechnologies.push(tech);
+                updateSelectedDisplay();
+            }
+        }
+
+        // Remove technology from selection
+        function removeTechnology(tech) {
+            selectedTechnologies = selectedTechnologies.filter(t => t !== tech);
+            updateSelectedDisplay();
+        }
+
+        // Filter technologies based on search
+        function filterTechnologies(searchTerm) {
+            const filtered = allTechnologies.filter(tech =>
+                tech.toLowerCase().includes(searchTerm.toLowerCase())
+            ).slice(0, 20);
+
+            popularTechsContainer.innerHTML = filtered.map(tech => `
+                <button type="button" class="tech-option px-3 py-2 bg-gray-700 hover:bg-brand-500 hover:text-gray-900 text-gray-300 rounded-lg text-sm transition" data-tech="${tech}">
+                    ${tech}
+                </button>
+            `).join('');
+        }
+
+        // Event listeners
+        openTechModalBtn.addEventListener('click', () => {
+            initModal();
+            techModal.classList.remove('hidden');
+        });
+
+        closeTechModalBtn.addEventListener('click', () => {
+            techModal.classList.add('hidden');
+        });
+
+        cancelTechModalBtn.addEventListener('click', () => {
+            techModal.classList.add('hidden');
+        });
+
+        confirmTechModalBtn.addEventListener('click', () => {
+            techModal.classList.add('hidden');
+        });
+
+        techSearchInput.addEventListener('input', (e) => {
+            filterTechnologies(e.target.value);
+        });
+
+        addCustomTechBtn.addEventListener('click', () => {
+            const customTech = customTechInput.value.trim();
+            if (customTech && !selectedTechnologies.includes(customTech)) {
+                addTechnology(customTech);
+                customTechInput.value = '';
+            }
+        });
+
+        customTechInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addCustomTechBtn.click();
+            }
+        });
+
+        // Event delegation for dynamic elements
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('tech-option')) {
+                const tech = e.target.dataset.tech;
+                addTechnology(tech);
+            }
+
+            if (e.target.classList.contains('remove-tech')) {
+                const tech = e.target.dataset.tech;
+                removeTechnology(tech);
+            }
+        });
+
+        // Close modal when clicking outside
+        techModal.addEventListener('click', (e) => {
+            if (e.target === techModal) {
+                techModal.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

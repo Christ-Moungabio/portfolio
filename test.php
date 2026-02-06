@@ -21,8 +21,8 @@ if (!$projectData) {
     })();
   </script>
   <style>.lang-flash body{ visibility: hidden; }</style>
-  <meta name="description" content="la lan" data-fr="la lan" data-en="dpddp" />
-  <meta property="og:description" content="la lan" data-fr="la lan" data-en="dpddp" />
+  <meta name="description" content="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-fr="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-en="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" />
+  <meta property="og:description" content="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-fr="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-en="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" />
   <meta property="og:title" content="test - Christ-Henoc Moungabio" data-fr="test - Christ-Henoc Moungabio" data-en="test - Christ-Henoc Moungabio" />
   <title data-fr="test - Christ-Henoc Moungabio" data-en="test - Christ-Henoc Moungabio">test - Christ-Henoc Moungabio</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -85,15 +85,15 @@ if (!$projectData) {
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight" data-fr="test" data-en="test">test</h1>
-        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl" data-fr="la lan" data-en="dpddp">
-          la lan
+        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl" data-fr="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-en="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh">
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a href="#gallery" class="px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition" data-fr="Voir la galerie" data-en="View gallery">Voir la galerie</a>
         </div>
       </div>
       <div class="reveal">
-        <img src="assets/test/main_1770198190_1f1e8_1f1f5.png" alt="test" data-en-alt="test" class="w-full rounded-lg shadow-soft">
+        <img src="assets/test/main_1770209720_gallery_1_1770198190_1f1e8_1f1f5.png" alt="test" data-en-alt="test" class="w-full rounded-lg shadow-soft">
       </div>
     </div>
   </div>
@@ -105,20 +105,26 @@ if (!$projectData) {
     <div class="grid md:grid-cols-3 gap-10 items-start">
       <div class="md:col-span-2 reveal">
         <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="À propos du projet" data-en="About the project">À propos du projet</h2>
-        <p class="mt-4 text-gray-300 leading-relaxed" data-fr="la lan" data-en="dpddp">
-          la lan
+        <p class="mt-4 text-gray-300 leading-relaxed" data-fr="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh" data-en="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh">
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sh
         </p>
         <div class="mt-6">
           <h3 class="text-xl font-semibold mb-4" data-fr="Fonctionnalités principales" data-en="Main features">Fonctionnalités principales</h3>
           <div class="grid md:grid-cols-2 gap-4">
             <div class="p-4 rounded-lg border border-white/10 bg-white/5">
-              <p class="text-sm text-gray-300">appd</p>
+              <p class="text-sm text-gray-300">Atufd</p>
             </div>
             <div class="p-4 rounded-lg border border-white/10 bg-white/5">
-              <p class="text-sm text-gray-300">add</p>
+              <p class="text-sm text-gray-300">ffdf</p>
             </div>
             <div class="p-4 rounded-lg border border-white/10 bg-white/5">
-              <p class="text-sm text-gray-300">ff</p>
+              <p class="text-sm text-gray-300">fftet</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <p class="text-sm text-gray-300">gttt</p>
+            </div>
+            <div class="p-4 rounded-lg border border-white/10 bg-white/5">
+              <p class="text-sm text-gray-300">gtrthr</p>
             </div>
           </div>
         </div>
@@ -126,7 +132,7 @@ if (!$projectData) {
       <aside class="reveal">
         <div class="p-5 rounded-2xl border border-white/10 bg-white/5">
           <h3 class="font-semibold mb-3">Technologies utilisées</h3>
-          <div class="flex flex-wrap gap-2"><span class="px-3 py-1 text-xs rounded bg-white/10">foffo</span>
+          <div class="flex flex-wrap gap-2"><span class="px-3 py-1 text-xs rounded bg-white/10">React</span><span class="px-3 py-1 text-xs rounded bg-white/10">NestJS</span><span class="px-3 py-1 text-xs rounded bg-white/10">Nuxt.js</span><span class="px-3 py-1 text-xs rounded bg-white/10">TypeScript</span><span class="px-3 py-1 text-xs rounded bg-white/10">Node.js</span>
           </div>
         </div>
       </aside>
@@ -140,19 +146,19 @@ if (!$projectData) {
     <h2 class="text-2xl md:text-3xl font-bold text-brand-300 mb-10 text-center" data-fr="Galerie du projet" data-en="Project Gallery">Galerie du projet</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
       <div class="reveal">
-        <img src="assets/test/gallery_0_1770198190_263a.png" alt="Image 1" data-en-alt="Image 1" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <img src="assets/test/gallery_0_1770209720_gallery_1_1770198190_1f1e8_1f1f5.png" alt="Image 1" data-en-alt="Image 1" class="w-full h-48 object-cover rounded-lg shadow-soft">
         <p class="mt-2 text-sm text-gray-400">Image 1</p>
       </div>
       <div class="reveal">
-        <img src="assets/test/gallery_1_1770198190_1f1e8_1f1f5.png" alt="Image 2" data-en-alt="Image 2" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <img src="assets/test/gallery_1_1770209720_gallery_2_1770198190_1f923.png" alt="Image 2" data-en-alt="Image 2" class="w-full h-48 object-cover rounded-lg shadow-soft">
         <p class="mt-2 text-sm text-gray-400">Image 2</p>
       </div>
       <div class="reveal">
-        <img src="assets/test/gallery_2_1770198190_1f923.png" alt="Image 3" data-en-alt="Image 3" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <img src="assets/test/gallery_2_1770209720_gallery_3_1770198190_545074124_10162997660606132_7494435912756937727_n.jpg" alt="Image 3" data-en-alt="Image 3" class="w-full h-48 object-cover rounded-lg shadow-soft">
         <p class="mt-2 text-sm text-gray-400">Image 3</p>
       </div>
       <div class="reveal">
-        <img src="assets/test/gallery_3_1770198190_545074124_10162997660606132_7494435912756937727_n.jpg" alt="Image 4" data-en-alt="Image 4" class="w-full h-48 object-cover rounded-lg shadow-soft">
+        <img src="assets/test/gallery_3_1770209720_main_1770198190_1f1e8_1f1f5.png" alt="Image 4" data-en-alt="Image 4" class="w-full h-48 object-cover rounded-lg shadow-soft">
         <p class="mt-2 text-sm text-gray-400">Image 4</p>
       </div>
     </div>

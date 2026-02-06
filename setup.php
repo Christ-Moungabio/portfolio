@@ -1,7 +1,6 @@
 <?php
 // Script de configuration de la base de données
 require_once 'config.php';
-require_once 'db.php';
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST, DB_USER, DB_PASS);

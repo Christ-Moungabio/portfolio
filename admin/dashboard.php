@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../db.php';
+require_once '../config.php';
 require_once '../projects.php';
 
 if (!isset($_SESSION['admin_id'])) {
@@ -16,7 +16,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         $action = $_POST['action'];
 
-        if ($action === 'add_project') {
+        if ($action === 'update_cv') {
+            if (isset($_FILES['cv_file']) && $_FILES['cv_file']['error'] === UPLOAD_ERR_OK) {
+                $fileType = strtolower(pathinfo($_FILES['cv_file']['name'], PATHINFO_EXTENSION));
+                if ($fileType === 'pdf') {
+                    $targetPath = '../assets/CV_Christ-Henoc_Moungabio.pdf';
+                    if (move_uploaded_file($_FILES['cv_file']['tmp_name'], $targetPath)) {
+                        $message = 'CV mis à jour avec succès !';
+                    } else {
+                        $error = 'Erreur lors du téléchargement du CV.';
+                    }
+                } else {
+                    $error = 'Seuls les fichiers PDF sont autorisés.';
+                }
+            } else {
+                $error = 'Aucun fichier sélectionné.';
+            }
+        } elseif ($action === 'add_project') {
             $slug = strtolower(str_replace(' ', '-', trim($_POST['title'])));
             $slug = preg_replace('/[^a-z0-9\-]/', '', $slug);
 
@@ -54,20 +70,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $data = [
                 'slug' => $slug,
-                'title' => trim($_POST['title']),
-                'description' => trim($_POST['description']),
-                'description_en' => trim($_POST['description_en'] ?? ''),
-                'technologies' => json_encode(array_map('trim', explode(',', $_POST['technologies']))),
-                'category' => trim($_POST['category']),
+                'title' => trim($_POST['title'] ?? ''),
+                'description' => trim($_POST['description'] ?? ''),
+                'description_en' => '',
+                'technologies' => json_encode(array_map('trim', explode(',', $_POST['technologies'] ?? ''))),
+                'category' => 'general',
                 'main_image' => $mainImagePath,
                 'gallery_images' => json_encode($galleryImages),
-                'features' => json_encode(array_map('trim', explode(',', $_POST['features'] ?? '')))
+                'features' => json_encode(array_map('trim', explode(',', $_POST['features'] ?? ''))),
+                'private' => isset($_POST['private']) ? 1 : 0
             ];
 
             try {
                 $db = Database::getInstance();
                 $db->query(
-                    "INSERT INTO projects (slug, title, description, description_en, technologies, category, main_image, gallery_images, features) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO projects (slug, title, description, description_en, technologies, category, main_image, gallery_images, features, private) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     array_values($data)
                 );
                 $message = 'Projet ajouté avec succès !';
@@ -448,7 +465,7 @@ if (!$projectData) {
                                     ?>
                                 </div>
                                 <div class="flex gap-2">
-                                    <a href="../<?php echo htmlspecialchars($project['slug']); ?>.php" target="_blank" class="px-3 py-1 bg-brand-500 text-gray-900 text-sm font-semibold rounded hover:bg-brand-400">Voir</a>
+                                    <a href="../project.php?slug=<?php echo htmlspecialchars($project['slug']); ?>" target="_blank" class="px-3 py-1 bg-brand-500 text-gray-900 text-sm font-semibold rounded hover:bg-brand-400">Voir</a>
                                     <form method="POST" class="inline" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')">
                                         <input type="hidden" name="action" value="delete_project">
                                         <input type="hidden" name="project_id" value="<?php echo $project['id']; ?>">
@@ -490,6 +507,45 @@ if (!$projectData) {
                                 </div>
                             </div>
                         <?php endforeach; ?>
+                    </div>
+                </section>
+
+                <!-- CV Management Section -->
+                <section id="cv" class="mb-12">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-white">Gestion du CV</h2>
+                    </div>
+
+                    <div class="p-6 bg-gray-800 rounded-lg border border-white/10">
+                        <h3 class="text-xl font-semibold mb-4">Télécharger un nouveau CV</h3>
+                        <p class="text-gray-400 text-sm mb-6">Le fichier doit être au format PDF. Le CV actuel sera remplacé.</p>
+
+                        <form method="POST" enctype="multipart/form-data" class="space-y-4">
+                            <input type="hidden" name="action" value="update_cv">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Fichier CV (PDF)</label>
+                                <input type="file" name="cv_file" accept=".pdf" required class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-500 file:text-gray-900 hover:file:bg-brand-400">
+                            </div>
+                            <button type="submit" class="px-6 py-2 bg-brand-500 text-gray-900 font-semibold rounded-lg hover:bg-brand-400">
+                                Mettre à jour le CV
+                            </button>
+                        </form>
+
+                        <div class="mt-6 pt-6 border-t border-white/10">
+                            <h4 class="text-lg font-semibold mb-2">CV actuel</h4>
+                            <?php if (file_exists('../assets/CV_Christ-Henoc_Moungabio.pdf')): ?>
+                                <p class="text-gray-400 text-sm mb-2">Dernière modification: <?php echo date('d/m/Y H:i', filemtime('../assets/CV_Christ-Henoc_Moungabio.pdf')); ?></p>
+                                <a href="../assets/CV_Christ-Henoc_Moungabio.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                    </svg>
+                                    Voir le CV actuel
+                                </a>
+                            <?php else: ?>
+                                <p class="text-gray-400 text-sm">Aucun CV n'est actuellement défini.</p>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </section>
 

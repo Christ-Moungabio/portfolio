@@ -3,6 +3,7 @@ require_once 'projects.php';
 $projectsManager = new Projects();
 $projects = $projectsManager->getAllProjects();
 $categories = $projectsManager->getCategories();
+$technologies = $projectsManager->getAllTechnologies();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -101,6 +102,14 @@ $categories = $projectsManager->getCategories();
 <!-- HERO -->
 <section class="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-950 py-16">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="mb-6">
+      <a href="index.php" class="inline-flex items-center gap-2 px-4 py-2 bg-brand-500 text-gray-900 font-semibold rounded-lg hover:bg-brand-400 transition" data-fr="Retour à l'accueil" data-en="Back to home">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        Retour à l'accueil
+      </a>
+    </div>
     <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight animate-gradient bg-gradient-to-r from-white via-brand-400 to-white bg-clip-text text-transparent">
       <span data-fr="Tous mes projets" data-en="All my projects">Tous mes projets</span>
     </h1>
@@ -122,12 +131,9 @@ $categories = $projectsManager->getCategories();
       </div>
       <div class="flex flex-wrap items-center gap-2 text-sm">
         <button data-filter="all" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Tous" data-en="All">Tous</button>
-        <button data-filter="laravel" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Laravel" data-en="Laravel">Laravel</button>
-        <button data-filter="react" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="React" data-en="React">React</button>
-        <button data-filter="nextjs" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Next.js" data-en="Next.js">Next.js</button>
-        <button data-filter="vue" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Vue" data-en="Vue">Vue</button>
-        <button data-filter="wordpress" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="WordPress" data-en="WordPress">WordPress</button>
-        <button data-filter="automatisation" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Automatisation" data-en="Automation">Automatisation</button>
+        <?php foreach ($technologies as $tech): ?>
+          <button data-filter="<?php echo htmlspecialchars($tech); ?>" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="<?php echo htmlspecialchars($tech); ?>" data-en="<?php echo htmlspecialchars($tech); ?>"><?php echo htmlspecialchars($tech); ?></button>
+        <?php endforeach; ?>
       </div>
     </div>
 
@@ -142,7 +148,7 @@ $categories = $projectsManager->getCategories();
 <!-- FOOTER -->
 <footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
+    <p data-fr="&copy; <span id='year'></span> Christ‑Henoc Moungabio. Tous droits réservés." data-en="&copy; <span id='year'></span> Christ‑Henoc Moungabio. All rights reserved.">&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
     <div class="mt-3 flex justify-center gap-4">
       <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a>
       <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
@@ -164,7 +170,11 @@ $categories = $projectsManager->getCategories();
   menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    entries.forEach(e => { 
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+      }
+    });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
@@ -176,12 +186,7 @@ $categories = $projectsManager->getCategories();
     btn.classList.add('ring-1','ring-brand-400');
     cards.forEach(c => {
       if(key==='all'){ c.classList.remove('hidden'); return; }
-      const match = (key==='laravel' && c.classList.contains('proj--laravel')) ||
-                    (key==='react' && c.classList.contains('proj--react')) ||
-                    (key==='nextjs' && c.classList.contains('proj--nextjs')) ||
-                    (key==='vue' && c.classList.contains('proj--vue')) ||
-                    (key==='wordpress' && c.classList.contains('proj--wordpress')) ||
-                    (key==='automatisation' && c.classList.contains('proj--automatisation'));
+      const match = c.classList.contains('proj--' + key);
       c.classList.toggle('hidden', !match);
     });
   }));

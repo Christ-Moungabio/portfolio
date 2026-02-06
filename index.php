@@ -1,9 +1,8 @@
 <?php
 require_once 'projects.php';
 $projectsManager = new Projects();
-$projects = $projectsManager->getLimitedProjects(12);
+$projects = $projectsManager->getLimitedProjectsIncludingPrivate(12);
 $allProjects = $projectsManager->getAllProjects();
-$categories = $projectsManager->getCategories();
 $showSeeMore = count($allProjects) > 12;
 ?>
 <!DOCTYPE html>
@@ -109,10 +108,10 @@ $showSeeMore = count($allProjects) > 12;
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal animate-slide-in-left">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight animate-gradient bg-gradient-to-r from-white via-brand-400 to-white bg-clip-text text-transparent">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight animate-gradient bg-gradient-to-r from-white via-brand-400 to-white bg-clip-text text-transparent" data-fr="Développeur Full Stack <span class=\"text-brand-400 animate-pulse\">Web & Mobile</span>" data-en="Full Stack <span class=\"text-brand-400 animate-pulse\">Web & Mobile</span> Developer">
           Développeur Full Stack <span class="text-brand-400 animate-pulse">Web & Mobile</span>
         </h1>
-        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl leading-relaxed">
+        <p class="mt-5 text-gray-300 text-base md:text-lg max-w-xl leading-relaxed" data-fr="Je transforme vos idées en solutions web et mobile fiables et modernes. Spécialisé en back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) et automatisation (n8n). Basé à Brazzaville, ouvert aux missions freelance à distance." data-en="I transform your ideas into reliable and modern web and mobile solutions. Specialized in back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) and automation (n8n). Based in Brazzaville, open to remote freelance missions.">
           Je transforme vos idées en solutions web et mobile fiables et modernes. Spécialisé en back-end (PHP/Laravel), front-end (React/Next.js/Vue), mobile (React Native) et automatisation (n8n). Basé à Brazzaville, ouvert aux missions freelance à distance.
         </p>
 
@@ -131,7 +130,7 @@ $showSeeMore = count($allProjects) > 12;
       <div class="reveal animate-slide-in-right flex justify-center md:justify-end">
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-r from-brand-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="relative w-96 h-96 object-cover rounded-full ring-8 ring-brand-500/40 shadow-2xl hover:scale-105 transition-all duration-500 hover:shadow-brand-500/25" />
+          <img src="assets/profil.jpg" alt="Photo de profil de Christ-Henoc Moungabio" data-en-alt="Profile photo of Christ-Henoc Moungabio" class="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full ring-8 ring-brand-500/40 shadow-2xl hover:scale-105 transition-all duration-500 hover:shadow-brand-500/25" />
           <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-brand-500 to-purple-600 rounded-full flex items-center justify-center animate-bounce">
             <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -181,25 +180,39 @@ $showSeeMore = count($allProjects) > 12;
       <span class="absolute left-2 md:left-4 top-0 h-full w-px bg-gradient-to-b from-brand-500/60 to-transparent"></span>
 
       <!-- Timeline items -->
-      <div class="reveal relative mb-10">
+       <div class="reveal relative mb-10">
         <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold" data-fr="Université ESCAT 2025" data-en="ESCAT University 2025">Université ESCAT 2025</h3>
-        <p class="text-xs text-gray-400">2025</p>
-        <p class="mt-2 text-gray-300" data-fr="Licence en Génie Informatique & Réseau" data-en="Degree in Computer Science & Networks">Licence en Génie Informatique & Réseau</p>
+        <h3 class="text-lg md:text-xl font-semibold" data-fr="Missions Freelance et autres" data-en="Freelance Missions and others">Missions Freelance et autres</h3>
+            <p class="text-xs text-gray-400" data-fr="2023 - Présent" data-en="2023 - Present">2023 - Présent</p>
+        <p class="mt-2 text-gray-300" data-fr="Développement de projets freelance en web et mobile" data-en="Freelance development of web and mobile projects">Développement de projets freelance en web et mobile</p>
+        </div>
+        <div class="reveal relative">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold" data-fr="Stage à Congo Digital Service" data-en="Internship at Congo Digital Service">Stage à Congo Digital Service</h3>
+          <p class="text-xs text-gray-400">2022</p>
+          <p class="mt-2 text-gray-300" data-fr="Stage en développement informatique" data-en="Internship in computer development">Stage en développement informatique</p><br>
+        </div>
+     
+        <div class="reveal relative mb-10">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold" data-fr="Université ESCAT 2025" data-en="ESCAT University 2025">Université ESCAT 2025</h3>
+          <p class="text-xs text-gray-400">2025</p>
+          <p class="mt-2 text-gray-300" data-fr="Licence en Génie Informatique & Réseau" data-en="Degree in Computer Science & Networks">Licence en Génie Informatique & Réseau</p>
+        </div>
+        <div class="reveal relative mb-10">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold" data-fr="LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI" data-en="Technical High School 1st May">LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI</h3>
+          <p class="text-xs text-gray-400">2020 - 2021</p>
+          <p class="mt-2 text-gray-300" data-fr="Baccalauréat En Réseaux & Télécommunications" data-en="Baccalaureate in Networks & Telecommunications">Baccalauréat En Réseaux & Télécommunications</p>
+        </div>
+        <div class="reveal relative mb-10">
+          <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
+          <h3 class="text-lg md:text-xl font-semibold" data-fr="Formation iConnect" data-en="iConnect Training">Formation iConnect</h3>
+          <p class="text-xs text-gray-400">2021 - 2023</p>
+          <p class="mt-2 text-gray-300" data-fr="iconnect" data-en="iconnect">iconnect</p>
+        </div>
       </div>
-      <div class="reveal relative mb-10">
-        <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold" data-fr="LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI" data-en="Technical High School 1st May">LYCÉE TECHNIQUE INDUSTRIEL 1ER MAI</h3>
-        <p class="text-xs text-gray-400">2020 - 2021</p>
-        <p class="mt-2 text-gray-300" data-fr="Baccalauréat En Réseaux & Télécommunications" data-en="Baccalaureate in Networks & Telecommunications">Baccalauréat En Réseaux & Télécommunications</p>
-      </div>
-      <div class="reveal relative">
-        <span class="absolute -left-[14px] md:-left-[10px] top-1 inline-block w-3 h-3 rounded-full bg-brand-400 ring-4 ring-brand-400/20"></span>
-        <h3 class="text-lg md:text-xl font-semibold" data-fr="Formation iConnect" data-en="iConnect Training">Formation iConnect</h3>
-        <p class="text-xs text-gray-400">2021 - 2023</p>
-        <p class="mt-2 text-gray-300" data-fr="iconnect" data-en="iconnect">iconnect</p>
-      </div>
-    </div>
+      
   </div>
 </section>
 
@@ -211,15 +224,7 @@ $showSeeMore = count($allProjects) > 12;
         <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="Projets" data-en="Projects">Projets</h2>
         <p class="text-gray-300 mt-2" data-fr="Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack." data-en="Selection of real projects and demos. Each card contains a screenshot, description and stack.">Sélection de projets réels et démos. Chaque carte contient une capture, une description et la stack.</p>
       </div>
-      <div class="flex flex-wrap items-center gap-2 text-sm">
-        <button data-filter="all" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Tous" data-en="All">Tous</button>
-        <button data-filter="laravel" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Laravel" data-en="Laravel">Laravel</button>
-        <button data-filter="react" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="React" data-en="React">React</button>
-        <button data-filter="nextjs" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Next.js" data-en="Next.js">Next.js</button>
-        <button data-filter="vue" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Vue" data-en="Vue">Vue</button>
-        <button data-filter="wordpress" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="WordPress" data-en="WordPress">WordPress</button>
-        <button data-filter="automatisation" class="filter-btn px-3 py-2 rounded-lg border border-white/10 hover:border-brand-400/60" data-fr="Automatisation" data-en="Automation">Automatisation</button>
-      </div>
+
     </div>
 
     <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -230,7 +235,13 @@ $showSeeMore = count($allProjects) > 12;
 
     <?php if ($showSeeMore): ?>
       <div class="text-center mt-8">
-        <a href="all-projects.php" class="btn-primary" data-fr="Voir plus de projets" data-en="See more projects">Voir plus de projets</a>
+        <a href="all-projects.php" class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-500 to-brand-600 text-gray-900 font-semibold rounded-xl hover:from-brand-400 hover:to-brand-500 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl" data-fr="Voir plus de projets" data-en="See more projects">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          Voir plus de projets
+        </a>
       </div>
     <?php endif; ?>
   </div>
@@ -259,7 +270,7 @@ $showSeeMore = count($allProjects) > 12;
         <div class="flex mb-3">
           <span class="text-yellow-400">★★★★★</span>
         </div>
-        <p class="text-gray-300 italic">"Christ-Henoc a travaillé sur notre plateforme d'entreprise. Son approche organisée et ses compétences techniques ont aidé à mener le projet à bien."</p>
+        <p class="text-gray-300 italic" data-fr="&quot;Christ-Henoc a travaillé sur notre plateforme d'entreprise. Son approche organisée et ses compétences techniques ont aidé à mener le projet à bien.&quot;" data-en="&quot;Christ-Henoc worked on our company platform. His organized approach and technical skills helped bring the project to fruition.&quot;">"Christ-Henoc a travaillé sur notre plateforme d'entreprise. Son approche organisée et ses compétences techniques ont aidé à mener le projet à bien."</p>
       </div>
 
       <!-- Testimonial 2 -->
@@ -276,7 +287,7 @@ $showSeeMore = count($allProjects) > 12;
         <div class="flex mb-3">
           <span class="text-yellow-400">★★★★★</span>
         </div>
-        <p class="text-gray-300 italic">"Christ-Henoc a développé notre site e-commerce avec une expertise remarquable. Son approche professionnelle et ses compétences techniques nous ont permis d'atteindre nos objectifs avec succès."</p>
+        <p class="text-gray-300 italic" data-fr="&quot;Christ-Henoc a développé notre site e-commerce avec une expertise remarquable. Son approche professionnelle et ses compétences techniques nous ont permis d'atteindre nos objectifs avec succès.&quot;" data-en="&quot;Christ-Henoc developed our e-commerce site with remarkable expertise. His professional approach and technical skills enabled us to achieve our goals successfully.&quot;">"Christ-Henoc a développé notre site e-commerce avec une expertise remarquable. Son approche professionnelle et ses compétences techniques nous ont permis d'atteindre nos objectifs avec succès."</p>
       </div>
 
       <!-- Testimonial 3 -->
@@ -293,7 +304,7 @@ $showSeeMore = count($allProjects) > 12;
         <div class="flex mb-3">
           <span class="text-yellow-400">★★★★★</span>
         </div>
-        <p class="text-gray-300 italic">"Christ-Henoc a développé la plateforme Brazza Na Ndulé Talent avec une approche méthodique et créative. Sa maîtrise des technologies modernes nous a permis de réaliser ce concours musical avec succès."</p>
+        <p class="text-gray-300 italic" data-fr="&quot;Christ-Henoc a développé la plateforme Brazza Na Ndulé Talent avec une approche méthodique et créative. Sa maîtrise des technologies modernes nous a permis de réaliser ce concours musical avec succès.&quot;" data-en="&quot;Christ-Henoc developed the Brazza Na Ndulé Talent platform with a methodical and creative approach. His mastery of modern technologies enabled us to successfully execute this music competition.&quot;">"Christ-Henoc a développé la plateforme Brazza Na Ndulé Talent avec une approche méthodique et créative. Sa maîtrise des technologies modernes nous a permis de réaliser ce concours musical avec succès."</p>
       </div>
     </div>
   </div>
@@ -306,7 +317,7 @@ $showSeeMore = count($allProjects) > 12;
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Back-end Skills -->
       <div class="reveal">
-        <h3 class="text-xl font-semibold mb-6 text-white">Back-end</h3>
+          <h3 class="text-xl font-semibold mb-6 text-white" data-fr="Back-end" data-en="Back-end">Back-end</h3>
         <div class="space-y-4">
           <div class="skill-progress">
             <div class="flex justify-between mb-2">
@@ -358,7 +369,7 @@ $showSeeMore = count($allProjects) > 12;
 
       <!-- Front-end Skills -->
       <div class="reveal">
-        <h3 class="text-xl font-semibold mb-6 text-white">Front-end</h3>
+          <h3 class="text-xl font-semibold mb-6 text-white" data-fr="Front-end" data-en="Front-end">Front-end</h3>
         <div class="space-y-4">
           <div class="skill-progress">
             <div class="flex justify-between mb-2">
@@ -410,7 +421,7 @@ $showSeeMore = count($allProjects) > 12;
 
       <!-- Tools & Technologies -->
       <div class="reveal">
-        <h3 class="text-xl font-semibold mb-6 text-white">Outils & Technologies</h3>
+          <h3 class="text-xl font-semibold mb-6 text-white" data-fr="Outils & Technologies" data-en="Tools & Technologies">Outils & Technologies</h3>
         <div class="space-y-4">
           <div class="skill-progress">
             <div class="flex justify-between mb-2">
@@ -503,7 +514,7 @@ $showSeeMore = count($allProjects) > 12;
 <!-- FOOTER -->
 <footer class="border-t border-white/5 py-8 text-center text-sm text-gray-400">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p>&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
+    <p data-fr="&copy; <span id='year'></span> Christ‑Henoc Moungabio. Tous droits réservés." data-en="&copy; <span id='year'></span> Christ‑Henoc Moungabio. All rights reserved.">&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
     <div class="mt-3 flex justify-center gap-4">
       <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a>
       <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
@@ -539,7 +550,18 @@ $showSeeMore = count($allProjects) > 12;
   menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    entries.forEach(e => { 
+      if (e.isIntersecting) {
+        e.target.classList.add('show');
+        // Animate progress bars
+        e.target.querySelectorAll('.progress-fill[data-progress]').forEach(bar => {
+          const progress = bar.getAttribute('data-progress');
+          setTimeout(() => {
+            bar.style.width = progress + '%';
+          }, 200);
+        });
+      }
+    });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
@@ -551,12 +573,7 @@ $showSeeMore = count($allProjects) > 12;
     btn.classList.add('ring-1','ring-brand-400');
     cards.forEach(c => {
       if(key==='all'){ c.classList.remove('hidden'); return; }
-      const match = (key==='laravel' && c.classList.contains('proj--laravel')) ||
-                    (key==='react' && c.classList.contains('proj--react')) ||
-                    (key==='nextjs' && c.classList.contains('proj--nextjs')) ||
-                    (key==='vue' && c.classList.contains('proj--vue')) ||
-                    (key==='wordpress' && c.classList.contains('proj--wordpress')) ||
-                    (key==='automatisation' && c.classList.contains('proj--automatisation'));
+      const match = c.classList.contains('proj--' + key);
       c.classList.toggle('hidden', !match);
     });
   }));
