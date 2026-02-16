@@ -151,7 +151,7 @@ $technologies = $projectsManager->getAllTechnologies();
     <p data-fr="&copy; <span id='year'></span> Christ‑Henoc Moungabio. Tous droits réservés." data-en="&copy; <span id='year'></span> Christ‑Henoc Moungabio. All rights reserved.">&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
     <div class="mt-3 flex justify-center gap-4">
       <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a>
-      <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
+      <a href="mailto:contact@christ.moungabio.mg-it-solutions.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
     </div>
   </div>
 </footer>

@@ -162,7 +162,7 @@ $showSeeMore = count($allProjects) > 12;
           <h3 class="font-semibold mb-3" data-fr="Infos rapides" data-en="Quick Info">Infos rapides</h3>
           <ul class="text-sm text-gray-300 space-y-2">
             <li>Brazzaville, Congo</li>
-            <li>mg.christ.henoc@gmail.com</li>
+            <li><a href="mailto:contact@christ.moungabio.mg-it-solutions.com" class="hover:text-brand-400">contact@christ.moungabio.mg-it-solutions.com</a></li>
             <li>+242 06 968 84 32</li>
             <li><a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a></li>
           </ul>
@@ -482,11 +482,11 @@ $showSeeMore = count($allProjects) > 12;
         <h2 class="text-2xl md:text-3xl font-bold text-brand-300" data-fr="Contact" data-en="Contact">Contact</h2>
         <p class="mt-3 text-gray-300" data-fr="Parlons de votre projet : délais, budget, objectifs. Réponse rapide." data-en="Let's talk about your project: deadlines, budget, objectives. Quick response.">Parlons de votre projet : délais, budget, objectifs. Réponse rapide.</p>
         <div class="mt-6 space-y-2 text-sm text-gray-300">
-          <p><a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400">mg.christ.henoc@gmail.com</a></p>
+          <p><a href="mailto:contact@christ.moungabio.mg-it-solutions.com" class="hover:text-brand-400">contact@christ.moungabio.mg-it-solutions.com</a></p>
           <p><a href="tel:+242069688432" class="hover:text-brand-400">+242 06 968 84 32</a> (WhatsApp)</p>
         </div>
       </div>
-      <form action="https://formsubmit.co/mg.christ.henoc@gmail.com" method="POST" class="reveal p-6 rounded-2xl border border-white/10 bg-white/5 grid grid-cols-1 gap-4">
+      <form action="https://formsubmit.co/contact@christ.moungabio.mg-it-solutions.com" method="POST" class="reveal p-6 md:p-8 rounded-2xl border border-brand-500/30 bg-gradient-to-br from-brand-500/5 via-brand-500/2 to-purple-500/5 shadow-xl shadow-brand-500/10 grid grid-cols-1 gap-4 backdrop-blur-sm">
         <input type="hidden" name="_subject" value="Message depuis le portfolio / christ-henoc.dev">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
@@ -504,7 +504,7 @@ $showSeeMore = count($allProjects) > 12;
           <label class="block text-sm font-medium text-gray-300 mb-2" data-fr="Message" data-en="Message">Message</label>
           <textarea name="message" rows="4" required class="form-input" placeholder="Décrivez votre projet en quelques lignes..." data-fr="Décrivez votre projet en quelques lignes..." data-en="Describe your project in a few lines..."></textarea>
         </div>
-        <button type="submit" class="mt-2 px-5 py-3 rounded-xl bg-brand-500 text-gray-900 font-semibold hover:bg-brand-400 transition-all duration-300 hover:scale-105" data-fr="Envoyer" data-en="Send">Envoyer</button>
+        <button type="submit" class="mt-4" data-fr="Envoyer" data-en="Send">Envoyer</button>
       </form>
     </div>
     <div id="thanks" class="sr-only" data-fr="Merci pour votre message ! Je vous répondrai dans les plus brefs délais." data-en="Thank you for your message! I will reply as soon as possible.">Merci pour votre message !</div>
@@ -517,7 +517,7 @@ $showSeeMore = count($allProjects) > 12;
     <p data-fr="&copy; <span id='year'></span> Christ‑Henoc Moungabio. Tous droits réservés." data-en="&copy; <span id='year'></span> Christ‑Henoc Moungabio. All rights reserved.">&copy; <span id="year"></span> Christ‑Henoc Moungabio. Tous droits réservés.</p>
     <div class="mt-3 flex justify-center gap-4">
       <a href="https://www.linkedin.com/in/christ-henoc-moungabio-0a0ba4323/" class="hover:text-brand-400" aria-label="LinkedIn" data-fr-aria="LinkedIn" data-en-aria="LinkedIn">LinkedIn</a>
-      <a href="mailto:mg.christ.henoc@gmail.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
+      <a href="mailto:contact@christ.moungabio.mg-it-solutions.com" class="hover:text-brand-400" aria-label="Email" data-fr-aria="Email" data-en-aria="Email">Email</a>
     </div>
   </div>
 </footer>
@@ -534,7 +534,7 @@ $showSeeMore = count($allProjects) > 12;
   "@type": "Person",
   "name": "Christ-Henoc Moungabio",
   "jobTitle": "Développeur Full Stack",
-  "email": "mg.christ.henoc@gmail.com",
+  "email": "contact@christ.moungabio.mg-it-solutions.com",
   "telephone": "+242069688432",
   "worksFor": {"@type":"Organization","name":"Freelance"},
   "knowsAbout": ["PHP","Laravel","Symfony","React","React Native","Next.js","Vue","Automatisation n8n","MySQL","PostgreSQL","API"]

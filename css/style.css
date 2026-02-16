@@ -204,27 +204,165 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Form Inputs */
+/* Form Inputs - Premium Design */
 .form-input {
   width: 100%;
-  padding: 0.875rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  color: #e2e8f0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 230, 188, 0.08) 0%, rgba(168, 85, 247, 0.06) 100%);
+  border: 2px solid rgba(0, 230, 188, 0.25);
+  border-radius: 1rem;
+  color: #f1f5f9;
   font-family: inherit;
-  transition: var(--transition-fast);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 230, 188, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.form-input:hover {
+  border-color: rgba(0, 230, 188, 0.5);
+  background: linear-gradient(135deg, rgba(0, 230, 188, 0.12) 0%, rgba(168, 85, 247, 0.1) 100%);
+  box-shadow: 0 12px 32px rgba(0, 230, 188, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .form-input:focus {
   outline: none;
   border-color: var(--brand-400);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 3px rgba(0, 230, 188, 0.1);
+  background: linear-gradient(135deg, rgba(0, 230, 188, 0.15) 0%, rgba(168, 85, 247, 0.12) 100%);
+  box-shadow: 0 0 0 4px rgba(0, 230, 188, 0.2), 0 15px 40px rgba(0, 230, 188, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
 }
 
 .form-input::placeholder {
-  color: #94a3b8;
+  color: #cbd5e1;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* Textarea - Same Premium Style */
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+textarea.form-input::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea.form-input::-webkit-scrollbar-track {
+  background: rgba(0, 230, 188, 0.05);
+  border-radius: 10px;
+}
+
+textarea.form-input::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brand-400) 0%, var(--brand-500) 100%);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+textarea.form-input::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--brand-300) 0%, var(--brand-400) 100%);
+}
+
+/* Form Labels - Premium Style */
+form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2f2f1;
+  margin-bottom: 0.6rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px rgba(0, 230, 188, 0.1);
+}
+
+form label:hover {
+  color: var(--brand-300);
+  text-shadow: 0 0 15px rgba(0, 230, 188, 0.3);
+  transform: translateX(2px);
+}
+
+/* Form Container */
+form {
+  perspective: 1000px;
+}
+
+form > div {
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+form > div:nth-child(n+5) { animation-delay: 0.1s; }
+form > div:nth-child(n+6) { animation-delay: 0.2s; }
+form > div:nth-child(n+7) { animation-delay: 0.3s; }
+form > div:nth-child(n+8) { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Button - Premium with Animation */
+form button[type="submit"] {
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-600) 50%, #9f7aea 100%);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 230, 188, 0.25), 0 0 20px rgba(0, 230, 188, 0.1);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+}
+
+form button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+form button[type="submit"]:hover::before {
+  left: 100%;
+}
+
+form button[type="submit"]:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(0, 230, 188, 0.4), 0 0 40px rgba(0, 230, 188, 0.2);
+  background: linear-gradient(135deg, var(--brand-400) 0%, var(--brand-500) 50%, #c084fc 100%);
+}
+
+form button[type="submit"]:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* Progress Bars */
